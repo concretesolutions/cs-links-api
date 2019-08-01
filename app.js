@@ -6,7 +6,7 @@ app.listen(port, () => {
 });
 
 app.get("/links", (req, res, next) => {
-    switch(req.query.q) {
+    switch(req.query.text) {
         case 'guia':
             res.send("https://blog.accenture.com/concrete/");
             break;
