@@ -13,6 +13,23 @@ app.get("/links", (req, res, next) => {
         case 'valores':
             res.send('https://blog.accenture.com/concrete/2018/08/01/valores/');
             break;
+        case 'viagem':
+        case 'viagens':
+            res.send('https://blog.accenture.com/concrete/2018/08/06/viagens/');
+            break;
+        case 'benefício':
+        case 'beneficio':
+        case 'benefícios':
+        case 'beneficios':
+        case 'salário':
+        case 'salario':
+            res.send('https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/');
+            break;
+        case 'todos':
+            res.send('Guia de Sobrevivência - https://blog.accenture.com/concrete/ \n'+
+                      'Valores - https://blog.accenture.com/concrete/2018/08/01/valores/ \n'+
+                      'Salário e Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/ \n' +
+                      'Viagens - https://blog.accenture.com/concrete/2018/08/06/viagens/');
         default:
             res.send('https://portal.accenture.com');
             break;
