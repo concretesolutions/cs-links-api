@@ -2,7 +2,7 @@
   "name": "cs-links-api",
   "version": "1.0.0",
   "description": "Slack integrations for slash-command",
-  "main": "app.js",
+  "main": "server.js",
   "dependencies": {
     "express": "^4.17.1"
   },
