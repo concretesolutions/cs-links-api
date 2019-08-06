@@ -1,7 +1,6 @@
 const expect = require('chai').expect;
 
 const {links} = require('../../routes/api');
-const {messageBuilder} = require('../../helper/utils');
 
 const res = {
   sendCalledWith: '',
