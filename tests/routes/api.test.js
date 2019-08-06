@@ -20,149 +20,107 @@ const res = {
   },
 };
 
+const callExpectation = function(request, response) {
+  links(request, response);
+  expect(response.sendCalledWith).to
+      .equal(messageBuilder(request.query.user_name, request.query.text));
+};
+
 describe('Api Route', function() {
   describe('Links() function with user defined', function() {
     it('Should respond all Links as default', function() {
       const newReq = reqWithUser;
-      links(newReq, res);
-      expect(res.sendCalledWith).to
-          .equal(messageBuilder(newReq.query.user_name, newReq.query.text));
+      callExpectation(newReq, res);
     });
     it('Should respond all Links with text todos', function() {
       const newReq = reqWithUser;
       newReq.query.text = 'todos';
-      links(newReq, res);
-      expect(res.sendCalledWith).to
-          .equal(messageBuilder(newReq.query.user_name, newReq.query.text));
+      callExpectation(newReq, res);
     });
     it('Should respond Valores Link with text valores', function() {
       const newReq = reqWithUser;
       newReq.query.text = 'valores';
-      links(newReq, res);
-      expect(res.sendCalledWith).to
-          .equal(messageBuilder(newReq.query.user_name, newReq.query.text));
+      callExpectation(newReq, res);
     });
     it('Should respond Guia de Sobrevivência Link with text guia', function() {
       const newReq = reqWithUser;
       newReq.query.text = 'guia';
-      links(newReq, res);
-      expect(res.sendCalledWith).to
-          .equal(messageBuilder(newReq.query.user_name, newReq.query.text));
+      callExpectation(newReq, res);
     });
     it('Should respond Viagens Link with texts viagem or viagens', function() {
       const newReq = reqWithUser;
       newReq.query.text = 'viagem';
-      links(newReq, res);
-      expect(res.sendCalledWith).to
-          .equal(messageBuilder(newReq.query.user_name, newReq.query.text));
+      callExpectation(newReq, res);
       newReq.query.text = 'viagens';
-      links(newReq, res);
-      expect(res.sendCalledWith).to
-          .equal(messageBuilder(newReq.query.user_name, newReq.query.text));
+      callExpectation(newReq, res);
     });
     it('Should respond Salário e Benefícios Link with texts salário or salario'
         , function() {
           const newReq = reqWithUser;
           newReq.query.text = 'salário';
-          links(newReq, res);
-          expect(res.sendCalledWith).to
-              .equal(messageBuilder(newReq.query.user_name, newReq.query.text));
+          callExpectation(newReq, res);
           newReq.query.text = 'salario';
-          links(newReq, res);
-          expect(res.sendCalledWith).to
-              .equal(messageBuilder(newReq.query.user_name, newReq.query.text));
+          callExpectation(newReq, res);
         });
     it('Should respond Salário e Benefícios Link with texts benefícios, '+
     'beneficios, benefício or beneficio', function() {
       const newReq = reqWithUser;
       newReq.query.text = 'benefícios';
-      links(newReq, res);
-      expect(res.sendCalledWith).to
-          .equal(messageBuilder(newReq.query.user_name, newReq.query.text));
+      callExpectation(newReq, res);
       newReq.query.text = 'beneficios';
-      links(newReq, res);
-      expect(res.sendCalledWith).to
-          .equal(messageBuilder(newReq.query.user_name, newReq.query.text));
+      callExpectation(newReq, res);
       newReq.query.text = 'benefício';
-      links(newReq, res);
-      expect(res.sendCalledWith).to
-          .equal(messageBuilder(newReq.query.user_name, newReq.query.text));
+      callExpectation(newReq, res);
       newReq.query.text = 'beneficio';
-      links(newReq, res);
-      expect(res.sendCalledWith).to
-          .equal(messageBuilder(newReq.query.user_name, newReq.query.text));
+      callExpectation(newReq, res);
     });
   }),
   describe('Links() function without user defined', function() {
     it('Should respond all Links as default', function() {
       const newReq = reqWithoutUser;
-      links(newReq, res);
-      expect(res.sendCalledWith).to
-          .equal(messageBuilder(newReq.query.user_name, newReq.query.text));
+      callExpectation(newReq, res);
     });
     it('Should respond all Links with text todos', function() {
       const newReq = reqWithoutUser;
       newReq.query.text = 'todos';
-      links(newReq, res);
-      expect(res.sendCalledWith).to
-          .equal(messageBuilder(newReq.query.user_name, newReq.query.text));
+      callExpectation(newReq, res);
     });
     it('Should respond Valores Link with text valores', function() {
       const newReq = reqWithoutUser;
       newReq.query.text = 'valores';
-      links(newReq, res);
-      expect(res.sendCalledWith).to
-          .equal(messageBuilder(newReq.query.user_name, newReq.query.text));
+      callExpectation(newReq, res);
     });
     it('Should respond Guia de Sobrevivência Link with text guia', function() {
       const newReq = reqWithoutUser;
       newReq.query.text = 'guia';
-      links(newReq, res);
-      expect(res.sendCalledWith).to
-          .equal(messageBuilder(newReq.query.user_name, newReq.query.text));
+      callExpectation(newReq, res);
     });
     it('Should respond Viagens Link with texts viagem or viagens', function() {
       const newReq = reqWithoutUser;
       newReq.query.text = 'viagem';
-      links(newReq, res);
-      expect(res.sendCalledWith).to
-          .equal(messageBuilder(newReq.query.user_name, newReq.query.text));
+      callExpectation(newReq, res);
       newReq.query.text = 'viagens';
-      links(newReq, res);
-      expect(res.sendCalledWith).to
-          .equal(messageBuilder(newReq.query.user_name, newReq.query.text));
+      callExpectation(newReq, res);
     });
     it('Should respond Salário e Benefícios Link with texts salário or salario'
         , function() {
           const newReq = reqWithoutUser;
           newReq.query.text = 'salário';
-          links(newReq, res);
-          expect(res.sendCalledWith).to
-              .equal(messageBuilder(newReq.query.user_name, newReq.query.text));
+          callExpectation(newReq, res);
           newReq.query.text = 'salario';
-          links(newReq, res);
-          expect(res.sendCalledWith).to
-              .equal(messageBuilder(newReq.query.user_name, newReq.query.text));
+          callExpectation(newReq, res);
         });
     it('Should respond Salário e Benefícios Link with texts benefícios, '+
     'beneficios, benefício or beneficio', function() {
       const newReq = reqWithoutUser;
       newReq.query.text = 'benefícios';
-      links(newReq, res);
-      expect(res.sendCalledWith).to
-          .equal(messageBuilder(newReq.query.user_name, newReq.query.text));
+      callExpectation(newReq, res);
       newReq.query.text = 'beneficios';
-      links(newReq, res);
-      expect(res.sendCalledWith).to
-          .equal(messageBuilder(newReq.query.user_name, newReq.query.text));
+      callExpectation(newReq, res);
       newReq.query.text = 'benefício';
-      links(newReq, res);
-      expect(res.sendCalledWith).to
-          .equal(messageBuilder(newReq.query.user_name, newReq.query.text));
+      callExpectation(newReq, res);
       newReq.query.text = 'beneficio';
-      links(newReq, res);
-      expect(res.sendCalledWith).to
-          .equal(messageBuilder(newReq.query.user_name, newReq.query.text));
+      callExpectation(newReq, res);
     });
   });
 });
