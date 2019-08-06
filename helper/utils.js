@@ -25,7 +25,7 @@ const linkSelector = function(keyWord) {
 
 module.exports = {
   messageBuilder: function(user, keyWord) {
-    const greeting = user ? 'Olá ' + user + ', seguem os links: \n' : '';
+    const greeting = user ? 'Olá ' + user + ', seguem os links: \n' : 'Olá, seguem os links: \n';
     const linksFound = linkSelector(keyWord);
     return greeting + linksFound;
   },
