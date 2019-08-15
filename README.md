@@ -4,7 +4,7 @@ Slack integrations for slash-command
 
 ### Badges
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d025ca3e72e543569bfd9864d6853645)](https://app.codacy.com/app/concrete/cs-links-api?utm_source=github.com&utm_medium=referral&utm_content=cs-joao-felipe/cs-links-api&utm_campaign=Badge_Grade_Dashboard)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6bc4338017a147f7b18f9d1f853981a5)](https://www.codacy.com/app/concrete/cs-links-api?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cs-joao-felipe/cs-links-api&amp;utm_campaign=Badge_Grade)
 [![Build Status](https://travis-ci.org/cs-joao-felipe/cs-links-api.svg?branch=master)](https://travis-ci.org/cs-joao-felipe/cs-links-api)
 [![codecov](https://codecov.io/gh/cs-joao-felipe/cs-links-api/branch/master/graph/badge.svg)](https://codecov.io/gh/cs-joao-felipe/cs-links-api)
 
