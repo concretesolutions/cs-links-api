@@ -14,7 +14,7 @@ const buildRequest = function(userName, keyWord) {
   if (userName) {
     req = {
       query: {
-        user_name: 'John Doe',
+        user_name: userName,
         text: keyWord,
       },
     };
