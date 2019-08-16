@@ -11,6 +11,8 @@ const linkSelector = function(keyWord) {
     case 'materiais':
     case 'padrão':
     case 'padrao':
+    case 'apresentação':
+    case 'apresentacao':
       return 'Materiais Padrão - https://blog.accenture.com/concrete/2018/09/21/materiais-padrao/';
     case 'benefício':
     case 'beneficio':

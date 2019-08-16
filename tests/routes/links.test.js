@@ -92,7 +92,7 @@ describe('Api Route', function() {
       callExpectation('John Doe', 'beneficio', res, expectedMessage);
     });
     it('Should respond Materiais Padrão Link with texts padrão, '+
-    'padrao, material or materiais', function() {
+    'padrao, material, materiais, apresentação or apresentacao', function() {
       const expectedMessage = 'Olá John Doe, seguem os links: \n'+
       'Materiais Padrão - https://blog.accenture.com/concrete/2018/09/21/materiais-padrao/';
 
@@ -100,6 +100,8 @@ describe('Api Route', function() {
       callExpectation('John Doe', 'padrao', res, expectedMessage);
       callExpectation('John Doe', 'material', res, expectedMessage);
       callExpectation('John Doe', 'materiais', res, expectedMessage);
+      callExpectation('John Doe', 'apresentação', res, expectedMessage);
+      callExpectation('John Doe', 'apresentacao', res, expectedMessage);
     });
   }),
   
