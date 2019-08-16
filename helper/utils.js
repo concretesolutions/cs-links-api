@@ -24,7 +24,7 @@ const linkSelector = function(keyWord) {
     case 'todos':
     default:
       return 'Essa key word não está mapeada, '+
-             'mas seguem todos os links que temos mapeados no momento \n' + 
+             'mas seguem todos os links que temos mapeados no momento \n' +
              'Guia de Sobrevivência - https://blog.accenture.com/concrete/ \n' +
              'Valores - https://blog.accenture.com/concrete/2018/08/01/valores/ \n' +
              'Salário e Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/ \n' +

@@ -108,7 +108,8 @@ describe('Api Route', function() {
     it('Should respond all Links as default', function() {
       callExpectation(null, null, res,
           'Olá, seguem os links: \n'+
-          'Essa key word não está mapeada, mas seguem todos os links que temos mapeados no momento \n' +
+          'Essa key word não está mapeada, '+
+          'mas seguem todos os links que temos mapeados no momento \n' +
           'Guia de Sobrevivência - https://blog.accenture.com/concrete/ \n' +
           'Valores - https://blog.accenture.com/concrete/2018/08/01/valores/ \n' +
           'Salário e Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/ \n' +
@@ -118,7 +119,8 @@ describe('Api Route', function() {
     it('Should respond all Links with text todos', function() {
       callExpectation(null, 'todos', res,
           'Olá, seguem os links: \n'+
-          'Essa key word não está mapeada, mas seguem todos os links que temos mapeados no momento \n' +
+          'Essa key word não está mapeada, '+
+          'mas seguem todos os links que temos mapeados no momento \n' +
           'Guia de Sobrevivência - https://blog.accenture.com/concrete/ \n' +
           'Valores - https://blog.accenture.com/concrete/2018/08/01/valores/ \n' +
           'Salário e Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/ \n' +
