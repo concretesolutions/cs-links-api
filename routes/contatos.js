@@ -1,4 +1,4 @@
-const contacts = '* Contas a Pagar (11) 5188-1851 \n' 
+const contacts = '* Contas a Pagar (11) 5188-1851 \n'
                + '* CIO  \n'
                + '  - RJ (21) 4003-4883 \n'
                + '  - SP (11) 5188-3011 \n'

@@ -104,7 +104,6 @@ describe('Api Route', function() {
       callExpectation('John Doe', 'apresentacao', res, expectedMessage);
     });
   }),
-  
   describe('Links() function without user defined', function() {
     it('Should respond all Links as default', function() {
       callExpectation(null, null, res,
