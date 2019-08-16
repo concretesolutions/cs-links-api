@@ -23,7 +23,8 @@ const linkSelector = function(keyWord) {
       return 'Salário e Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/';
     case 'todos':
     default:
-      return 'Essa key word não está mapeada, mas seguem todos os links que temos mapeados no momento \n' + 
+      return 'Essa key word não está mapeada, '+
+             'mas seguem todos os links que temos mapeados no momento \n' + 
              'Guia de Sobrevivência - https://blog.accenture.com/concrete/ \n' +
              'Valores - https://blog.accenture.com/concrete/2018/08/01/valores/ \n' +
              'Salário e Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/ \n' +
@@ -39,5 +40,5 @@ module.exports = {
                     : 'Olá, seguem os links: \n';
     const linksFound = linkSelector(keyWord);
     return greeting + linksFound;
-  }
+  },
 };
