@@ -32,14 +32,6 @@ const linkSelector = function(keyWord) {
   }
 };
 
-const contactSelector = function(keyWord) {
-  switch(keyWord) {
-
-    default: 
-      return '';
-  }
-};
-
 module.exports = {
   messageBuilder: function(user, keyWord) {
     const greeting = user ?
