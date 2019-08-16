@@ -39,17 +39,21 @@ describe('Api Route', function() {
     it('Should respond all Links as default', function() {
       callExpectation('John Doe', null, res,
           'Olá John Doe, seguem os links: \n'+
+          'Essa key word não está mapeada, mas seguem todos os links que temos mapeados no momento \n' +
           'Guia de Sobrevivência - https://blog.accenture.com/concrete/ \n' +
           'Valores - https://blog.accenture.com/concrete/2018/08/01/valores/ \n' +
           'Salário e Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/ \n' +
+          'Materiais Padrão - https://blog.accenture.com/concrete/2018/09/21/materiais-padrao/ \n' +
           'Viagens - https://blog.accenture.com/concrete/2018/08/06/viagens/');
     });
     it('Should respond all Links with text todos', function() {
       callExpectation('John Doe', 'todos', res,
           'Olá John Doe, seguem os links: \n'+
+          'Essa key word não está mapeada, mas seguem todos os links que temos mapeados no momento \n' +
           'Guia de Sobrevivência - https://blog.accenture.com/concrete/ \n' +
           'Valores - https://blog.accenture.com/concrete/2018/08/01/valores/ \n' +
           'Salário e Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/ \n' +
+          'Materiais Padrão - https://blog.accenture.com/concrete/2018/09/21/materiais-padrao/ \n' +
           'Viagens - https://blog.accenture.com/concrete/2018/08/06/viagens/');
     });
     it('Should respond Valores Link with text valores', function() {
@@ -87,22 +91,37 @@ describe('Api Route', function() {
       callExpectation('John Doe', 'benefício', res, expectedMessage);
       callExpectation('John Doe', 'beneficio', res, expectedMessage);
     });
+    it('Should respond Materiais Padrão Link with texts padrão, '+
+    'padrao, material or materiais', function() {
+      const expectedMessage = 'Olá John Doe, seguem os links: \n'+
+      'Materiais Padrão - https://blog.accenture.com/concrete/2018/09/21/materiais-padrao/';
+
+      callExpectation('John Doe', 'padrão', res, expectedMessage);
+      callExpectation('John Doe', 'padrao', res, expectedMessage);
+      callExpectation('John Doe', 'material', res, expectedMessage);
+      callExpectation('John Doe', 'materiais', res, expectedMessage);
+    });
   }),
+  
   describe('Links() function without user defined', function() {
     it('Should respond all Links as default', function() {
       callExpectation(null, null, res,
           'Olá, seguem os links: \n'+
+          'Essa key word não está mapeada, mas seguem todos os links que temos mapeados no momento \n' +
           'Guia de Sobrevivência - https://blog.accenture.com/concrete/ \n' +
           'Valores - https://blog.accenture.com/concrete/2018/08/01/valores/ \n' +
           'Salário e Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/ \n' +
+          'Materiais Padrão - https://blog.accenture.com/concrete/2018/09/21/materiais-padrao/ \n' +
           'Viagens - https://blog.accenture.com/concrete/2018/08/06/viagens/');
     });
     it('Should respond all Links with text todos', function() {
       callExpectation(null, 'todos', res,
           'Olá, seguem os links: \n'+
+          'Essa key word não está mapeada, mas seguem todos os links que temos mapeados no momento \n' +
           'Guia de Sobrevivência - https://blog.accenture.com/concrete/ \n' +
           'Valores - https://blog.accenture.com/concrete/2018/08/01/valores/ \n' +
           'Salário e Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/ \n' +
+          'Materiais Padrão - https://blog.accenture.com/concrete/2018/09/21/materiais-padrao/ \n' +
           'Viagens - https://blog.accenture.com/concrete/2018/08/06/viagens/');
     });
     it('Should respond Valores Link with text valores', function() {

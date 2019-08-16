@@ -16,13 +16,14 @@ Just type the slash command **link** with the desired keyword, as shown below.
 
 ## Available keyword (for now)
 
-| Keyword     | Expected Result |
-| ----------- | --------------- |
-| todos       | Return all available links |
-| valores     | Return Valores Link |
-| guia        | Return Guia de Sobrevivência link |
-| viagem, viagens | Return Viagens link |
-| benefício, beneficio, benefícios, beneficios, salário, salario | Return Salário & Benefícios link|
+| Keyword                                                        | Expected Result                   |
+| -------------------------------------------------------------- | --------------------------------- |
+| todos                                                          | Return all available links        |
+| valores                                                        | Return Valores Link               |
+| guia                                                           | Return Guia de Sobrevivência link |
+| viagem, viagens                                                | Return Viagens link               |
+| benefício, beneficio, benefícios, beneficios, salário, salario | Return Salário & Benefícios link  |
+| padrão, padrao, material, materiais                            | Return Materiais Padrão link      |
 
 ## **Disclaimer**
 

@@ -7,6 +7,11 @@ const linkSelector = function(keyWord) {
     case 'viagem':
     case 'viagens':
       return 'Viagens - https://blog.accenture.com/concrete/2018/08/06/viagens/';
+    case 'material':
+    case 'materiais':
+    case 'padrão':
+    case 'padrao':
+      return 'Materiais Padrão - https://blog.accenture.com/concrete/2018/09/21/materiais-padrao/';
     case 'benefício':
     case 'beneficio':
     case 'benefícios':
@@ -16,10 +21,12 @@ const linkSelector = function(keyWord) {
       return 'Salário e Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/';
     case 'todos':
     default:
-      return 'Guia de Sobrevivência - https://blog.accenture.com/concrete/ \n' +
-                'Valores - https://blog.accenture.com/concrete/2018/08/01/valores/ \n' +
-                'Salário e Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/ \n' +
-                'Viagens - https://blog.accenture.com/concrete/2018/08/06/viagens/';
+      return 'Essa key word não está mapeada, mas seguem todos os links que temos mapeados no momento \n' + 
+             'Guia de Sobrevivência - https://blog.accenture.com/concrete/ \n' +
+             'Valores - https://blog.accenture.com/concrete/2018/08/01/valores/ \n' +
+             'Salário e Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/ \n' +
+             'Materiais Padrão - https://blog.accenture.com/concrete/2018/09/21/materiais-padrao/ \n' +
+             'Viagens - https://blog.accenture.com/concrete/2018/08/06/viagens/';
   }
 };
 
