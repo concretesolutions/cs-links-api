@@ -3,8 +3,8 @@ const valoresLink = 'Valores - https://blog.accenture.com/concrete/2018/08/01/va
 const salariosLink = 'Salário e Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/';
 const materiaisLink = 'Materiais Padrão - https://blog.accenture.com/concrete/2018/09/21/materiais-padrao/';
 const viagensLink = 'Viagens - https://blog.accenture.com/concrete/2018/08/06/viagens/';
-const linkSelector = function(keyWord) {
 
+const linkSelector = function(keyWord) {
   if (!keyWord || keyWord.match(/^todos$/)) {
     return 'Essa key word não está mapeada, '+
           'mas seguem todos os links que temos mapeados no momento\n' +
@@ -32,7 +32,6 @@ const linkSelector = function(keyWord) {
     return salariosLink;
   }
 };
-
 
 module.exports = {
   messageBuilder: function(user, keyWord) {
