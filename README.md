@@ -16,15 +16,16 @@ Just type the slash command **link** with the desired keyword, as shown below.
 
 ## Available keyword (for now)
 
-| Keyword                                                         | Expected Result                   |
-| --------------------------------------------------------------- | --------------------------------- |
-| todos                                                           | Return all available links        |
-| valores                                                         | Return Valores Link               |
-| malote, malotes                                                 | Return Malote Link                |
-| guia                                                            | Return Guia de Sobrevivência link |
-| viagem, viagens                                                 | Return Viagens link               |
-| benefício, beneficio, benefícios, beneficios, salário, salario  | Return Salário & Benefícios link  |
-| padrão, padrao, material, materiais, apresentação. apresentacao | Return Materiais Padrão link      |
+| Keyword                                                         | Expected Result                      |
+| --------------------------------------------------------------- | ------------------------------------ |
+| todos                                                           | Return all available links           |
+| valores                                                         | Return Valores Link                  |
+| malote, malotes                                                 | Return Malote Link                   |
+| guia                                                            | Return Guia de Sobrevivência link    |
+| viagem, viagens                                                 | Return Viagens link                  |
+| benefício, beneficio, benefícios, beneficios, salário, salario  | Return Salário & Benefícios link     |
+| padrão, padrao, material, materiais, apresentação, apresentacao | Return Materiais Padrão link         |
+| reembolso, reembolsos, adiantamento, adiantamentos              | Return Reembolso & Adiantamento link |
 
 ## **Disclaimer**
 
