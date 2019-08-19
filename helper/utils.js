@@ -5,6 +5,7 @@ const materiaisLink = 'Materiais Padrão - https://blog.accenture.com/concrete/2
 const viagensLink = 'Viagens - https://blog.accenture.com/concrete/2018/08/06/viagens/';
 const maloteLink = 'Malote - https://blog.accenture.com/concrete/2018/08/06/malote/';
 const reembolsoLink = 'Reembolsos & Adiantamentos - https://blog.accenture.com/concrete/2018/08/06/reembolso-e-adiantamentos/';
+const dpLink = 'Departamento Pessoal - https://blog.accenture.com/concrete/2018/08/06/departamento-pessoal/';
 
 const linkSelector = function(keyWord) {
   if (!keyWord || keyWord.match(/^todos$/)) {
@@ -12,6 +13,7 @@ const linkSelector = function(keyWord) {
           'mas seguem todos os links que temos mapeados no momento\n' +
           guiaLink + '\n' +
           valoresLink + '\n' +
+          dpLink + '\n' +
           salariosLink + '\n' +
           materiaisLink + '\n' +
           maloteLink + '\n' +
@@ -23,6 +25,9 @@ const linkSelector = function(keyWord) {
   }
   if (keyWord.match(/^valores$/)) {
     return valoresLink;
+  }
+  if (keyWord.match(/^departamento pessoal|dp|pessoal$/)) {
+    return dpLink;
   }
   if (keyWord.match(/^malotes?$/)) {
     return maloteLink;
