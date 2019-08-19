@@ -44,6 +44,7 @@ describe('Api Route', function() {
           'Valores - https://blog.accenture.com/concrete/2018/08/01/valores/\n' +
           'Salário e Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/\n' +
           'Materiais Padrão - https://blog.accenture.com/concrete/2018/09/21/materiais-padrao/\n' +
+          'Malote - https://blog.accenture.com/concrete/2018/08/06/malote/\n' +
           'Viagens - https://blog.accenture.com/concrete/2018/08/06/viagens/');
     });
     it('Should respond all Links with text todos', function() {
@@ -54,6 +55,7 @@ describe('Api Route', function() {
           'Valores - https://blog.accenture.com/concrete/2018/08/01/valores/\n' +
           'Salário e Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/\n' +
           'Materiais Padrão - https://blog.accenture.com/concrete/2018/09/21/materiais-padrao/\n' +
+          'Malote - https://blog.accenture.com/concrete/2018/08/06/malote/\n' +
           'Viagens - https://blog.accenture.com/concrete/2018/08/06/viagens/');
     });
     it('Should respond Valores Link with text valores', function() {
@@ -72,6 +74,13 @@ describe('Api Route', function() {
 
       callExpectation('John Doe', 'viagem', res, expectedMessage);
       callExpectation('John Doe', 'viagens', res, expectedMessage);
+    });
+    it('Should respond Malote Link with texts malote or malotes', function() {
+      const expectedMessage = 'Olá John Doe, seguem os links:\n'+
+      'Malote - https://blog.accenture.com/concrete/2018/08/06/malote/';
+
+      callExpectation('John Doe', 'malote', res, expectedMessage);
+      callExpectation('John Doe', 'malotes', res, expectedMessage);
     });
     it('Should respond Salário e Benefícios Link with texts salário or salario'
         , function() {
@@ -114,6 +123,7 @@ describe('Api Route', function() {
           'Valores - https://blog.accenture.com/concrete/2018/08/01/valores/\n' +
           'Salário e Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/\n' +
           'Materiais Padrão - https://blog.accenture.com/concrete/2018/09/21/materiais-padrao/\n' +
+          'Malote - https://blog.accenture.com/concrete/2018/08/06/malote/\n' +
           'Viagens - https://blog.accenture.com/concrete/2018/08/06/viagens/');
     });
     it('Should respond all Links with text todos', function() {
@@ -125,6 +135,7 @@ describe('Api Route', function() {
           'Valores - https://blog.accenture.com/concrete/2018/08/01/valores/\n' +
           'Salário e Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/\n' +
           'Materiais Padrão - https://blog.accenture.com/concrete/2018/09/21/materiais-padrao/\n' +
+          'Malote - https://blog.accenture.com/concrete/2018/08/06/malote/\n' +
           'Viagens - https://blog.accenture.com/concrete/2018/08/06/viagens/');
     });
     it('Should respond Valores Link with text valores', function() {
@@ -143,6 +154,13 @@ describe('Api Route', function() {
 
       callExpectation(null, 'viagem', res, expectedMessage);
       callExpectation(null, 'viagens', res, expectedMessage);
+    });
+    it('Should respond Malote Link with texts malote or malotes', function() {
+      const expectedMessage = 'Olá, seguem os links:\n'+
+      'Malote - https://blog.accenture.com/concrete/2018/08/06/malote/';
+
+      callExpectation(null, 'malote', res, expectedMessage);
+      callExpectation(null, 'malotes', res, expectedMessage);
     });
     it('Should respond Salário e Benefícios Link with texts salário or salario'
         , function() {
