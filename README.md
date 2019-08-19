@@ -26,6 +26,7 @@ Just type the slash command **link** with the desired keyword, as shown below.
 | benefício, beneficio, benefícios, beneficios, salário, salario  | Return Salário & Benefícios link     |
 | padrão, padrao, material, materiais, apresentação, apresentacao | Return Materiais Padrão link         |
 | reembolso, reembolsos, adiantamento, adiantamentos              | Return Reembolso & Adiantamento link |
+| departamento pessoal, pessoal, dp                               | Return Departamento Pessoal     link |
 
 ## **Disclaimer**
 
