@@ -33,7 +33,7 @@ const linkSelector = function(keyWord) {
     return materiaisLink;
   }
   if (keyWord
-      .match(/^benefício|beneficio|benefícios|beneficios|salário|salario$/)) {
+      .match(/^benefícios?|beneficios?|salários?|salarios?$/)) {
     return salariosLink;
   }
 };
