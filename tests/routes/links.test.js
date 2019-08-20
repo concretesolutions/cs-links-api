@@ -10,8 +10,7 @@ const res = {
 };
 
 const buildRequest = function(keyWord) {
-  let req;
-  req = {
+  const req = {
     query: {
       text: keyWord,
     },
@@ -22,8 +21,8 @@ const buildRequest = function(keyWord) {
 const baseMessage = 'Olá, seguem os links:\n';
 
 const extendedMessage = baseMessage +
-                      'Essa key word não está mapeada, '+
-                      'mas seguem todos os links que temos mapeados no momento\n';
+                  'Essa key word não está mapeada, '+
+                  'mas seguem todos os links que temos mapeados no momento\n';
 
 const callExpectation = function(keyWord, actual, expected) {
   links(buildRequest(keyWord), actual);
@@ -35,19 +34,19 @@ describe('Api Route', function() {
   describe('Links() function without user defined', function() {
     it('Should respond all Links as default', function() {
       callExpectation(null, res,
-        extendedMessage +
-        'Guia de Sobrevivência - https://blog.accenture.com/concrete/\n' +
-        'Valores - https://blog.accenture.com/concrete/2018/08/01/valores/\n' +
-        'Departamento Pessoal - https://blog.accenture.com/concrete/2018/08/06/departamento-pessoal/\n' +
-        'Salário & Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/\n' +
-        'Materiais Padrão - https://blog.accenture.com/concrete/2018/09/21/materiais-padrao/\n' +
-        'Malote - https://blog.accenture.com/concrete/2018/08/06/malote/\n' +
-        'Reembolsos & Adiantamentos - https://blog.accenture.com/concrete/2018/08/06/reembolso-e-adiantamentos/\n' +
-        'Viagens - https://blog.accenture.com/concrete/2018/08/06/viagens/');
+          extendedMessage +
+          'Guia de Sobrevivência - https://blog.accenture.com/concrete/\n' +
+          'Valores - https://blog.accenture.com/concrete/2018/08/01/valores/\n' +
+          'Departamento Pessoal - https://blog.accenture.com/concrete/2018/08/06/departamento-pessoal/\n' +
+          'Salário & Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/\n' +
+          'Materiais Padrão - https://blog.accenture.com/concrete/2018/09/21/materiais-padrao/\n' +
+          'Malote - https://blog.accenture.com/concrete/2018/08/06/malote/\n' +
+          'Reembolsos & Adiantamentos - https://blog.accenture.com/concrete/2018/08/06/reembolso-e-adiantamentos/\n' +
+          'Viagens - https://blog.accenture.com/concrete/2018/08/06/viagens/');
     });
     it('Should respond all Links with text todos', function() {
       callExpectation('todos', res,
-        extendedMessage +
+          extendedMessage +
         'Guia de Sobrevivência - https://blog.accenture.com/concrete/\n' +
         'Valores - https://blog.accenture.com/concrete/2018/08/01/valores/\n' +
         'Departamento Pessoal - https://blog.accenture.com/concrete/2018/08/06/departamento-pessoal/\n' +
@@ -57,17 +56,17 @@ describe('Api Route', function() {
         'Reembolsos & Adiantamentos - https://blog.accenture.com/concrete/2018/08/06/reembolso-e-adiantamentos/\n' +
         'Viagens - https://blog.accenture.com/concrete/2018/08/06/viagens/');
     });
-    it('Should respond Departamento Pessoal Link with text departamento pessoal, pessoas or dp'
-      , function() {
-        const expectedMessage = baseMessage +
+    it('Should respond DP Link with text departamento pessoal, pessoas or dp'
+        , function() {
+          const expectedMessage = baseMessage +
         'Departamento Pessoal - https://blog.accenture.com/concrete/2018/08/06/departamento-pessoal/';
-        callExpectation('departamento pessoal', res, expectedMessage);
-        callExpectation('pessoal', res, expectedMessage);
-        callExpectation('dp', res, expectedMessage);
-    });
+          callExpectation('departamento pessoal', res, expectedMessage);
+          callExpectation('pessoal', res, expectedMessage);
+          callExpectation('dp', res, expectedMessage);
+        });
     it('Should respond Valores Link with text valores', function() {
       callExpectation('valores', res,
-        baseMessage +
+          baseMessage +
         'Valores - https://blog.accenture.com/concrete/2018/08/01/valores/');
     });
     it('Should respond Guia de Sobrevivência Link with text guia', function() {
