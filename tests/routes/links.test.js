@@ -114,5 +114,17 @@ describe('Api Route', function() {
       callExpectation('adiantamento', res, expectedMessage);
       callExpectation('adiantamentos', res, expectedMessage);
     });
+    it('Should respond Materiais Padrão Link with texts padrão, '+
+    'padrao, material, materiais, apresentação or apresentacao', function() {
+      const expectedMessage = baseMessage +
+      'Materiais Padrão - https://blog.accenture.com/concrete/2018/09/21/materiais-padrao/';
+
+      callExpectation('padrão', res, expectedMessage);
+      callExpectation('padrao', res, expectedMessage);
+      callExpectation('material', res, expectedMessage);
+      callExpectation('materiais', res, expectedMessage);
+      callExpectation('apresentação', res, expectedMessage);
+      callExpectation('apresentacao', res, expectedMessage);
+    });
   });
 });
