@@ -20,30 +20,39 @@ const linkSelector = function(keyWord) {
           reembolsoLink + '\n' +
           viagensLink;
   }
+  // Match guia.
   if (keyWord.match(/^guia$/)) {
     return guiaLink;
   }
+  // Match valores.
   if (keyWord.match(/^valores$/)) {
     return valoresLink;
   }
-  if (keyWord.match(/^departamento pessoal|dp|pessoal$/)) {
+  // Match departamento pessoal, pessoal and dp.
+  if (keyWord.match(/^(departamento )?pessoal|dp$/)) {
     return dpLink;
   }
+  // Match malote and malotes.
   if (keyWord.match(/^malotes?$/)) {
     return maloteLink;
   }
-  if (keyWord.match(/^viagem|viagens$/)) {
+  // Match viagem and viagens.
+  if (keyWord.match(/^viage(m|ns)$/)) {
     return viagensLink;
   }
+  //Match reembolso, reembolsos, adiantamento and adiantamentos.
   if (keyWord.match(/^reembolsos?|adiantamentos?$/)) {
     return reembolsoLink;
   }
+  // Match padrão, padrao, material, materiais apresentação and apresentacao
   if (keyWord
-      .match(/^material|materiais|padrão|padrao|apresentação|apresentacao$/)) {
+      .match(/^padr(ão|ao)|materia(l|is)|apresenta(ção|cao)$/)) {
     return materiaisLink;
   }
+  // Match benefício, benefícios, baneficio. beneficios, salário, salários, 
+  // salario and salarios.
   if (keyWord
-      .match(/^benefícios?|beneficios?|salários?|salarios?$/)) {
+      .match(/^benef(í|i)cios?|sal(á|a)rios?$/)) {
     return salariosLink;
   }
 };
