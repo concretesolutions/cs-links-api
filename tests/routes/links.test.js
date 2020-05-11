@@ -39,6 +39,7 @@ describe('Api Route', function() {
           'Valores - https://blog.accenture.com/concrete/2018/08/01/valores/\n' +
           'Departamento Pessoal - https://blog.accenture.com/concrete/2018/08/06/departamento-pessoal/\n' +
           'Salário & Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/\n' +
+          'Eventos & Treinamentos - https://blog.accenture.com/concrete/2018/08/06/treinamentos/\n' +
           'Materiais Padrão - https://blog.accenture.com/concrete/2018/09/21/materiais-padrao/\n' +
           'Malote - https://blog.accenture.com/concrete/2018/08/06/malote/\n' +
           'Reembolsos & Adiantamentos - https://blog.accenture.com/concrete/2018/08/06/reembolso-e-adiantamentos/\n' +
@@ -51,6 +52,7 @@ describe('Api Route', function() {
         'Valores - https://blog.accenture.com/concrete/2018/08/01/valores/\n' +
         'Departamento Pessoal - https://blog.accenture.com/concrete/2018/08/06/departamento-pessoal/\n' +
         'Salário & Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/\n' +
+        'Eventos & Treinamentos - https://blog.accenture.com/concrete/2018/08/06/treinamentos/\n' +
         'Materiais Padrão - https://blog.accenture.com/concrete/2018/09/21/materiais-padrao/\n' +
         'Malote - https://blog.accenture.com/concrete/2018/08/06/malote/\n' +
         'Reembolsos & Adiantamentos - https://blog.accenture.com/concrete/2018/08/06/reembolso-e-adiantamentos/\n' +
@@ -125,6 +127,16 @@ describe('Api Route', function() {
       callExpectation('materiais', res, expectedMessage);
       callExpectation('apresentação', res, expectedMessage);
       callExpectation('apresentacao', res, expectedMessage);
+    });
+    it('Should respond Eventos & Treinamentos Link with texts eventos, '+
+    'evento, treinamento or treinamentos', function() {
+      const expectedMessage = baseMessage +
+      'Eventos & Treinamentos - https://blog.accenture.com/concrete/2018/08/06/treinamentos/';
+
+      callExpectation('evento', res, expectedMessage);
+      callExpectation('eventos', res, expectedMessage);
+      callExpectation('treinamento', res, expectedMessage);
+      callExpectation('treinamentos', res, expectedMessage);
     });
   });
 });
