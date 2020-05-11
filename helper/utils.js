@@ -1,6 +1,7 @@
 const guiaLink = 'Guia de Sobrevivência - https://blog.accenture.com/concrete/';
 const valoresLink = 'Valores - https://blog.accenture.com/concrete/2018/08/01/valores/';
 const salariosLink = 'Salário & Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/';
+const eventosLink = 'Eventos & Treinamentos - https://blog.accenture.com/concrete/2018/08/06/treinamentos/';
 const materiaisLink = 'Materiais Padrão - https://blog.accenture.com/concrete/2018/09/21/materiais-padrao/';
 const viagensLink = 'Viagens - https://blog.accenture.com/concrete/2018/08/06/viagens/';
 const maloteLink = 'Malote - https://blog.accenture.com/concrete/2018/08/06/malote/';
@@ -15,6 +16,7 @@ const linkSelector = function(keyWord) {
           valoresLink + '\n' +
           dpLink + '\n' +
           salariosLink + '\n' +
+          eventosLink + '\n' +
           materiaisLink + '\n' +
           maloteLink + '\n' +
           reembolsoLink + '\n' +
@@ -49,11 +51,16 @@ const linkSelector = function(keyWord) {
       .match(/^padr(ão|ao)|materia(l|is)|apresenta(ção|cao)$/)) {
     return materiaisLink;
   }
-  // Match benefício, benefícios, baneficio. beneficios, salário, salários, 
+  // Match benefício, benefícios, baneficio, beneficios, salário, salários, 
   // salario and salarios.
   if (keyWord
       .match(/^benef(í|i)cios?|sal(á|a)rios?$/)) {
     return salariosLink;
+  }
+  // Match evento, eventos, treinamento, treinamentos.
+  if (keyWord
+      .match(/^eventos?|treinamentos?$/)) {
+    return eventosLink;
   }
 };
 
