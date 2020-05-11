@@ -27,6 +27,7 @@ Just type the slash command **link** with the desired keyword, as shown below.
 | padrão, padrao, material, materiais, apresentação, apresentacao | Return Materiais Padrão link         |
 | reembolso, reembolsos, adiantamento, adiantamentos              | Return Reembolso & Adiantamento link |
 | departamento pessoal, pessoal, dp                               | Return Departamento Pessoal     link |
+| evento, eventos, treinamento, treinamentos                      | Return Eventos & Treinamentos   link |
 
 ## **Disclaimer**
 
