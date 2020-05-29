@@ -1,3 +1,4 @@
+require('dotenv').config()
 const expect = require('chai').expect;
 
 const {links} = require('../../routes/links');
@@ -35,8 +36,8 @@ describe('Api Route', function() {
     it('Should respond all Links as default', function() {
       callExpectation(null, res,
           extendedMessage +
-          'Guia de Sobrevivência - https://blog.accenture.com/concrete/\n' +
-          'Valores - https://blog.accenture.com/concrete/2018/08/01/valores/\n' +
+          'Guia de Sobrevivência - http://dummy.link\n' +
+          'Valores - http://dummy.link\n' +
           'Departamento Pessoal - https://blog.accenture.com/concrete/2018/08/06/departamento-pessoal/\n' +
           'Salário & Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/\n' +
           'Eventos & Treinamentos - https://blog.accenture.com/concrete/2018/08/06/treinamentos/\n' +
@@ -48,8 +49,8 @@ describe('Api Route', function() {
     it('Should respond all Links with text todos', function() {
       callExpectation('todos', res,
           extendedMessage +
-        'Guia de Sobrevivência - https://blog.accenture.com/concrete/\n' +
-        'Valores - https://blog.accenture.com/concrete/2018/08/01/valores/\n' +
+        'Guia de Sobrevivência - http://dummy.link\n' +
+        'Valores - http://dummy.link\n' +
         'Departamento Pessoal - https://blog.accenture.com/concrete/2018/08/06/departamento-pessoal/\n' +
         'Salário & Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/\n' +
         'Eventos & Treinamentos - https://blog.accenture.com/concrete/2018/08/06/treinamentos/\n' +
@@ -69,10 +70,10 @@ describe('Api Route', function() {
     it('Should respond Valores Link with text valores', function() {
       callExpectation('valores', res,
           baseMessage +
-        'Valores - https://blog.accenture.com/concrete/2018/08/01/valores/');
+        'Valores - http://dummy.link');
     });
     it('Should respond Guia de Sobrevivência Link with text guia', function() {
-      callExpectation('guia', res, baseMessage +'Guia de Sobrevivência - https://blog.accenture.com/concrete/');
+      callExpectation('guia', res, baseMessage +'Guia de Sobrevivência - http://dummy.link');
     });
     it('Should respond Viagens Link with texts viagem or viagens', function() {
       const expectedMessage = baseMessage +

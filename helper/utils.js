@@ -1,5 +1,5 @@
-const guiaLink = 'Guia de Sobrevivência - https://blog.accenture.com/concrete/';
-const valoresLink = 'Valores - https://blog.accenture.com/concrete/2018/08/01/valores/';
+const guiaLink = `Guia de Sobrevivência - ${process.env.URL_GUIA}`;
+const valoresLink = `Valores - ${process.env.URL_VALORES}`;
 const salariosLink = 'Salário & Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/';
 const eventosLink = 'Eventos & Treinamentos - https://blog.accenture.com/concrete/2018/08/06/treinamentos/';
 const materiaisLink = 'Materiais Padrão - https://blog.accenture.com/concrete/2018/09/21/materiais-padrao/';
