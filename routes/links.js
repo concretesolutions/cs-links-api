@@ -1,4 +1,4 @@
-const {messageBuilder} = require('../helper/linkUtils');
+const {messageBuilder} = require('../helper/linksUtils');
 
 module.exports = {
   links: function(req, res) {
