@@ -3,10 +3,11 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 const {links} = require('./routes/links');
-const {contatos} = require('./routes/contatos');
+const {contacts} = require('./routes/contacts');
+
 app.listen(port, () => {
   console.log('Server running on port ' + port);
 });
 
 app.get('/links', links);
-app.get('/contatos', contatos);
+app.get('/contatos', contacts);

@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config();
 const expect = require('chai').expect;
 
 const {links} = require('../../routes/links');
@@ -44,7 +44,10 @@ describe('Api Route', function() {
           'Materiais Padrão - http://dummy.link\n' +
           'Malote - http://dummy.link\n' +
           'Reembolsos & Adiantamentos - http://dummy.link\n' +
-          'Viagens - http://dummy.link');
+          'Viagens - http://dummy.link\n' +
+          'Tutorial Expenses - http://dummy.link\n' +
+          'Tutorial MyTe - http://dummy.link\n' +
+          'Talks Internas - http://dummy.link');
     });
     it('Should respond all Links with text todos', function() {
       callExpectation('todos', res,
@@ -57,7 +60,10 @@ describe('Api Route', function() {
           'Materiais Padrão - http://dummy.link\n' +
           'Malote - http://dummy.link\n' +
           'Reembolsos & Adiantamentos - http://dummy.link\n' +
-          'Viagens - http://dummy.link');
+          'Viagens - http://dummy.link\n' +
+          'Tutorial Expenses - http://dummy.link\n' +
+          'Tutorial MyTe - http://dummy.link\n' +
+          'Talks Internas - http://dummy.link');
     });
     it('Should respond DP Link with text departamento pessoal, pessoas or dp'
         , function() {
@@ -128,6 +134,27 @@ describe('Api Route', function() {
       callExpectation('eventos', res, expectedMessage);
       callExpectation('treinamento', res, expectedMessage);
       callExpectation('treinamentos', res, expectedMessage);
+    });
+    it('Should respond Tutorial Expenses Link.', function() {
+      const expectedMessage = baseMessage +
+      'Tutorial Expenses - http://dummy.link';
+
+      callExpectation('expenses', res, expectedMessage);
+    });
+    it('Should respond Tutorial MyTe Link.', function() {
+      const expectedMessage = baseMessage +
+      'Tutorial MyTe - http://dummy.link';
+
+      callExpectation('myte', res, expectedMessage);
+    });
+    it('Should respond Talks Internas Link ' +
+    'with text talks, gravacoes or gravações', function() {
+      const expectedMessage = baseMessage +
+      'Talks Internas - http://dummy.link';
+
+      callExpectation('talks', res, expectedMessage);
+      callExpectation('gravacoes', res, expectedMessage);
+      callExpectation('gravações', res, expectedMessage);
     });
   });
 });
