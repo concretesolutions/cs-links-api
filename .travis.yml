@@ -8,6 +8,6 @@ deploy:
   api_key:
     secure: 00AtnE6mH98BH/M9FdObDBDz15BzKbWDuQlHZEJ1m9Gt+LXVh82TNKclP7BzlM49ioEtGss9+jEucI0X/ZOBIMU/4hI5u9jmpRkIud4mi91qRhteEBBCgamnj2B1y1BRt673KqxkhN1W5ApN/rnFIKhREGxGDvOwMX2oTXqHRGtqEiu22cnlkgkZ/qmOvwdN7YCreWzFlvgeirrOgiQjYHmrSCdWLfXIUNNZCOJqPP8EB+KQqYDnKtwPIrbDLQ30HIeLWo2szC7J6mDEwrkoiw3hdGY8fPcf6EpW6kttA7dHBzdz0KRsMHaHqbR1Kibs5qIpnpcYJ1qjrqpkMW2lGYkVq2Fx8b57DJcXY5X4y/QCjqXdsvx4fvbZNkfWoBVbYz+mEQwiHbP+qrcoJlaZsPeuUAEQN2vJ2EMVcVb2hCZTqcFOyzNWEH6JE7OY5AePEkAm2I2vOmaMKKpnZ8hjX3eubqLFqFkpmyt8HwFbGpwHGh6ZcQNO9IqfRDXV36Ty5exfIxHCsKrn6nte9LBjlK9YPISo7h7vZP0WG68FXUmTAalX1uZAel1f7246/Bqug1MMc9vu2KoQuYin3r+cP/GtjCj56wmGmNUNOB6w1stWRbDlMIhwULHt7vsST4SocoQil5gpQzs9CRHO2bI0yEH13Gf8Eb3Ci/64A3tyo+o=
 env:
-  jobs:
+  global:
     - URL_GUIA: http://dummy.link
     - URL_VALORES: http://dummy.link
