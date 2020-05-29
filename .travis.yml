@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-- '10'
+- 10
 after_success: 
 - npm run coverage
 deploy:
@@ -11,3 +11,10 @@ env:
   global:
     - URL_GUIA: http://dummy.link
     - URL_VALORES: http://dummy.link
+    - URL_SALARIO: http://dummy.link
+    - URL_EVENTOS: http://dummy.link
+    - URL_MATERIAL: http://dummy.link
+    - URL_VIAGENS: http://dummy.link
+    - URL_MALOTE: http://dummy.link
+    - URL_REEMBOLSO: http://dummy.link
+    - URL_DP: http://dummy.link

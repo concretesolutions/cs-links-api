@@ -1,12 +1,12 @@
 const guiaLink = `Guia de Sobrevivência - ${process.env.URL_GUIA}`;
 const valoresLink = `Valores - ${process.env.URL_VALORES}`;
-const salariosLink = 'Salário & Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/';
-const eventosLink = 'Eventos & Treinamentos - https://blog.accenture.com/concrete/2018/08/06/treinamentos/';
-const materiaisLink = 'Materiais Padrão - https://blog.accenture.com/concrete/2018/09/21/materiais-padrao/';
-const viagensLink = 'Viagens - https://blog.accenture.com/concrete/2018/08/06/viagens/';
-const maloteLink = 'Malote - https://blog.accenture.com/concrete/2018/08/06/malote/';
-const reembolsoLink = 'Reembolsos & Adiantamentos - https://blog.accenture.com/concrete/2018/08/06/reembolso-e-adiantamentos/';
-const dpLink = 'Departamento Pessoal - https://blog.accenture.com/concrete/2018/08/06/departamento-pessoal/';
+const salariosLink = `Salário & Benefícios - ${process.env.URL_SALARIO}`;
+const eventosLink = `Eventos & Treinamentos - ${process.env.URL_EVENTOS}`;
+const materiaisLink = `Materiais Padrão - ${process.env.URL_MATERIAL}`;
+const viagensLink = `Viagens - ${process.env.URL_VIAGENS}`;
+const maloteLink = `Malote - ${process.env.URL_MALOTE}`;
+const reembolsoLink = `Reembolsos & Adiantamentos - ${process.env.URL_REEMBOLSO}`;
+const dpLink = `Departamento Pessoal - ${process.env.URL_DP}`;
 
 const linkSelector = function(keyWord) {
   if (!keyWord || keyWord.match(/^todos$/)) {

@@ -38,69 +38,62 @@ describe('Api Route', function() {
           extendedMessage +
           'Guia de Sobrevivência - http://dummy.link\n' +
           'Valores - http://dummy.link\n' +
-          'Departamento Pessoal - https://blog.accenture.com/concrete/2018/08/06/departamento-pessoal/\n' +
-          'Salário & Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/\n' +
-          'Eventos & Treinamentos - https://blog.accenture.com/concrete/2018/08/06/treinamentos/\n' +
-          'Materiais Padrão - https://blog.accenture.com/concrete/2018/09/21/materiais-padrao/\n' +
-          'Malote - https://blog.accenture.com/concrete/2018/08/06/malote/\n' +
-          'Reembolsos & Adiantamentos - https://blog.accenture.com/concrete/2018/08/06/reembolso-e-adiantamentos/\n' +
-          'Viagens - https://blog.accenture.com/concrete/2018/08/06/viagens/');
+          'Departamento Pessoal - http://dummy.link\n' +
+          'Salário & Benefícios - http://dummy.link\n' +
+          'Eventos & Treinamentos - http://dummy.link\n' +
+          'Materiais Padrão - http://dummy.link\n' +
+          'Malote - http://dummy.link\n' +
+          'Reembolsos & Adiantamentos - http://dummy.link\n' +
+          'Viagens - http://dummy.link');
     });
     it('Should respond all Links with text todos', function() {
       callExpectation('todos', res,
           extendedMessage +
-        'Guia de Sobrevivência - http://dummy.link\n' +
-        'Valores - http://dummy.link\n' +
-        'Departamento Pessoal - https://blog.accenture.com/concrete/2018/08/06/departamento-pessoal/\n' +
-        'Salário & Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/\n' +
-        'Eventos & Treinamentos - https://blog.accenture.com/concrete/2018/08/06/treinamentos/\n' +
-        'Materiais Padrão - https://blog.accenture.com/concrete/2018/09/21/materiais-padrao/\n' +
-        'Malote - https://blog.accenture.com/concrete/2018/08/06/malote/\n' +
-        'Reembolsos & Adiantamentos - https://blog.accenture.com/concrete/2018/08/06/reembolso-e-adiantamentos/\n' +
-        'Viagens - https://blog.accenture.com/concrete/2018/08/06/viagens/');
+          'Guia de Sobrevivência - http://dummy.link\n' +
+          'Valores - http://dummy.link\n' +
+          'Departamento Pessoal - http://dummy.link\n' +
+          'Salário & Benefícios - http://dummy.link\n' +
+          'Eventos & Treinamentos - http://dummy.link\n' +
+          'Materiais Padrão - http://dummy.link\n' +
+          'Malote - http://dummy.link\n' +
+          'Reembolsos & Adiantamentos - http://dummy.link\n' +
+          'Viagens - http://dummy.link');
     });
     it('Should respond DP Link with text departamento pessoal, pessoas or dp'
         , function() {
-          const expectedMessage = baseMessage +
-        'Departamento Pessoal - https://blog.accenture.com/concrete/2018/08/06/departamento-pessoal/';
+          const expectedMessage = baseMessage + 'Departamento Pessoal - http://dummy.link';
           callExpectation('departamento pessoal', res, expectedMessage);
           callExpectation('pessoal', res, expectedMessage);
           callExpectation('dp', res, expectedMessage);
         });
     it('Should respond Valores Link with text valores', function() {
-      callExpectation('valores', res,
-          baseMessage +
-        'Valores - http://dummy.link');
+      callExpectation('valores', res, baseMessage + 'Valores - http://dummy.link');
     });
     it('Should respond Guia de Sobrevivência Link with text guia', function() {
       callExpectation('guia', res, baseMessage +'Guia de Sobrevivência - http://dummy.link');
     });
     it('Should respond Viagens Link with texts viagem or viagens', function() {
-      const expectedMessage = baseMessage +
-      'Viagens - https://blog.accenture.com/concrete/2018/08/06/viagens/';
+      const expectedMessage = baseMessage + 'Viagens - http://dummy.link';
 
       callExpectation('viagem', res, expectedMessage);
       callExpectation('viagens', res, expectedMessage);
     });
     it('Should respond Malote Link with texts malote or malotes', function() {
-      const expectedMessage = baseMessage +
-      'Malote - https://blog.accenture.com/concrete/2018/08/06/malote/';
+      const expectedMessage = baseMessage + 'Malote - http://dummy.link';
 
       callExpectation('malote', res, expectedMessage);
       callExpectation('malotes', res, expectedMessage);
     });
     it('Should respond Salário e Benefícios Link with texts salário or salario'
         , function() {
-          const expectedMessage = baseMessage +
-          'Salário & Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/';
+          const expectedMessage = baseMessage + 'Salário & Benefícios - http://dummy.link';
 
           callExpectation('salário', res, expectedMessage);
           callExpectation('salario', res, expectedMessage);
         });
     it('Should respond Salário e Benefícios Link with texts benefícios, '+
     'beneficios, benefício or beneficio', function() {
-      const expectedMessage = baseMessage +
-      'Salário & Benefícios - https://blog.accenture.com/concrete/2018/08/06/salario-beneficios/';
+      const expectedMessage = baseMessage + 'Salário & Benefícios - http://dummy.link';
 
       callExpectation('benefícios', res, expectedMessage);
       callExpectation('beneficios', res, expectedMessage);
@@ -109,8 +102,7 @@ describe('Api Route', function() {
     });
     it('Should respond Reembolsos e Adiantamentos Link with texts reembolso, '+
     'reembolsos, adiantamento or adiantamentos', function() {
-      const expectedMessage = baseMessage +
-      'Reembolsos & Adiantamentos - https://blog.accenture.com/concrete/2018/08/06/reembolso-e-adiantamentos/';
+      const expectedMessage = baseMessage + 'Reembolsos & Adiantamentos - http://dummy.link';
 
       callExpectation('reembolso', res, expectedMessage);
       callExpectation('reembolsos', res, expectedMessage);
@@ -119,8 +111,7 @@ describe('Api Route', function() {
     });
     it('Should respond Materiais Padrão Link with texts padrão, '+
     'padrao, material, materiais, apresentação or apresentacao', function() {
-      const expectedMessage = baseMessage +
-      'Materiais Padrão - https://blog.accenture.com/concrete/2018/09/21/materiais-padrao/';
+      const expectedMessage = baseMessage + 'Materiais Padrão - http://dummy.link';
 
       callExpectation('padrão', res, expectedMessage);
       callExpectation('padrao', res, expectedMessage);
@@ -131,8 +122,7 @@ describe('Api Route', function() {
     });
     it('Should respond Eventos & Treinamentos Link with texts eventos, '+
     'evento, treinamento or treinamentos', function() {
-      const expectedMessage = baseMessage +
-      'Eventos & Treinamentos - https://blog.accenture.com/concrete/2018/08/06/treinamentos/';
+      const expectedMessage = baseMessage + 'Eventos & Treinamentos - http://dummy.link';
 
       callExpectation('evento', res, expectedMessage);
       callExpectation('eventos', res, expectedMessage);
