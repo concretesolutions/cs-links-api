@@ -18,3 +18,12 @@ env:
     - URL_MALOTE: http://dummy.link
     - URL_REEMBOLSO: http://dummy.link
     - URL_DP: http://dummy.link
+    - URL_EXPENSES: http://dummy.link
+    - URL_MYTE: http://dummy.link
+    - URL_TALKS: http://dummy.link
+    - CONTACT_CONTAS: http://dummy.link
+    - CONTACT_CIO: http://dummy.link
+    - CONTACT_DP: http://dummy.link
+    - CONTACT_MYTE: http://dummy.link
+    - CONTACT_ASOC: http://dummy.link
+    - CONTACT_ITSEG: http://dummy.link

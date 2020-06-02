@@ -7,6 +7,9 @@ const viagensLink = `Viagens - ${process.env.URL_VIAGENS}`;
 const maloteLink = `Malote - ${process.env.URL_MALOTE}`;
 const reembolsoLink = `Reembolsos & Adiantamentos - ${process.env.URL_REEMBOLSO}`;
 const dpLink = `Departamento Pessoal - ${process.env.URL_DP}`;
+const tutorialExpensesLink = `Tutorial Expenses - ${process.env.URL_EXPENSES}`;
+const tutorialMyTeLink = `Tutorial MyTe - ${process.env.URL_MYTE}`;
+const talksInternasLink = `Talks Internas - ${process.env.URL_TALKS}`;
 
 const linkSelector = function(keyWord) {
   if (!keyWord || keyWord.match(/^todos$/)) {
@@ -20,7 +23,10 @@ const linkSelector = function(keyWord) {
           materiaisLink + '\n' +
           maloteLink + '\n' +
           reembolsoLink + '\n' +
-          viagensLink;
+          viagensLink + '\n' +
+          tutorialExpensesLink + '\n' +
+          tutorialMyTeLink + '\n' +
+          talksInternasLink;
   }
   // Match guia.
   if (keyWord.match(/^guia$/)) {
@@ -42,7 +48,7 @@ const linkSelector = function(keyWord) {
   if (keyWord.match(/^viage(m|ns)$/)) {
     return viagensLink;
   }
-  //Match reembolso, reembolsos, adiantamento and adiantamentos.
+  // Match reembolso, reembolsos, adiantamento and adiantamentos.
   if (keyWord.match(/^reembolsos?|adiantamentos?$/)) {
     return reembolsoLink;
   }
@@ -51,7 +57,7 @@ const linkSelector = function(keyWord) {
       .match(/^padr(ão|ao)|materia(l|is)|apresenta(ção|cao)$/)) {
     return materiaisLink;
   }
-  // Match benefício, benefícios, baneficio, beneficios, salário, salários, 
+  // Match benefício, benefícios, baneficio, beneficios, salário, salários,
   // salario and salarios.
   if (keyWord
       .match(/^benef(í|i)cios?|sal(á|a)rios?$/)) {
@@ -61,6 +67,21 @@ const linkSelector = function(keyWord) {
   if (keyWord
       .match(/^eventos?|treinamentos?$/)) {
     return eventosLink;
+  }
+  // Match tutorial, tutoriais, expenses.
+  if (keyWord
+      .match(/^expenses?$/)) {
+    return tutorialExpensesLink;
+  }
+  // Match tutorial, tutoriais, myte.
+  if (keyWord
+      .match(/^myte?$/)) {
+    return tutorialMyTeLink;
+  }
+  // Match Talks Internas.
+  if (keyWord
+      .match(/^talks?|grava(ções|coes)?$/)) {
+    return talksInternasLink;
   }
 };
 
