@@ -1,0 +1,44 @@
+name: CS-LINKS-API CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    env:
+      URL_GUIA: http://dummy.link
+      URL_VALORES: http://dummy.link
+      URL_SALARIO: http://dummy.link
+      URL_EVENTOS: http://dummy.link
+      URL_MATERIAL: http://dummy.link
+      URL_VIAGENS: http://dummy.link
+      URL_MALOTE: http://dummy.link
+      URL_REEMBOLSO: http://dummy.link
+      URL_DP: http://dummy.link
+      URL_EXPENSES: http://dummy.link
+      URL_MYTE: http://dummy.link
+      URL_TALKS: http://dummy.link
+      CONTACT_CONTAS: http://dummy.link
+      CONTACT_CIO: http://dummy.link
+      CONTACT_DP: http://dummy.link
+      CONTACT_MYTE: http://dummy.link
+      CONTACT_ASOC: http://dummy.link
+      CONTACT_ITSEG: http://dummy.link
+    steps:
+    - uses: actions/checkout@master
+    - uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Installing dependencies...
+      run: npm ci
+    - name: Building app...
+      run: npm run build --if-present
+    - name: Testing app...
+      run: npm test
