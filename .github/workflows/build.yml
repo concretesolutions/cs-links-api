@@ -42,9 +42,3 @@ jobs:
       run: npm run build --if-present
     - name: Testing app...
       run: npm test
-    - name: Generating coverage report
-      run: npm run coverage
-    - name: Uploading coverage to Codecov
-      uses: codecov/codecov-action@v1
-      with:
-        file: ./coverage/lcov.info
