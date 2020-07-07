@@ -32,9 +32,7 @@ jobs:
       CONTACT_ASOC: http://dummy.link
       CONTACT_ITSEG: http://dummy.link
     steps:
-    
     - uses: actions/checkout@master
-    - name: Setup Node.js ${{ matrix.node-version }} ...
     - uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
