@@ -1,0 +1,49 @@
+name: CS-LINKS-API CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      uses: actions/checkout@master
+      name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+      uses: codecov/codecov-action@v1
+      with:
+        file: ./coverage/lcov.info
+      run: npm ci
+      run: npm run build --if-present
+      run: npm test
+      run: npm run coverage
+      env:
+        URL_GUIA: http://dummy.link
+        URL_VALORES: http://dummy.link
+        URL_SALARIO: http://dummy.link
+        URL_EVENTOS: http://dummy.link
+        URL_MATERIAL: http://dummy.link
+        URL_VIAGENS: http://dummy.link
+        URL_MALOTE: http://dummy.link
+        URL_REEMBOLSO: http://dummy.link
+        URL_DP: http://dummy.link
+        URL_EXPENSES: http://dummy.link
+        URL_MYTE: http://dummy.link
+        URL_TALKS: http://dummy.link
+        CONTACT_CONTAS: http://dummy.link
+        CONTACT_CIO: http://dummy.link
+        CONTACT_DP: http://dummy.link
+        CONTACT_MYTE: http://dummy.link
+        CONTACT_ASOC: http://dummy.link
+        CONTACT_ITSEG: http://dummy.link
