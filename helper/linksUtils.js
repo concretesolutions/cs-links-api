@@ -6,6 +6,7 @@ const materiaisLink = `Materiais Padrão - ${process.env.URL_MATERIAL}`;
 const viagensLink = `Viagens - ${process.env.URL_VIAGENS}`;
 const maloteLink = `Malote - ${process.env.URL_MALOTE}`;
 const reembolsoLink = `Reembolsos & Adiantamentos - ${process.env.URL_REEMBOLSO}`;
+const pontoLink = `Ponto Eletrônico & Horas Extras - ${process.env.URL_PONTO}`;
 const dpLink = `Departamento Pessoal - ${process.env.URL_DP}`;
 const tutorialExpensesLink = `Tutorial Expenses - ${process.env.URL_EXPENSES}`;
 const tutorialMyTeLink = `Tutorial MyTe - ${process.env.URL_MYTE}`;
@@ -19,6 +20,7 @@ const linkSelector = function(keyWord) {
           valoresLink + '\n' +
           dpLink + '\n' +
           salariosLink + '\n' +
+          pontoLink + '\n' +
           eventosLink + '\n' +
           materiaisLink + '\n' +
           maloteLink + '\n' +
@@ -82,6 +84,10 @@ const linkSelector = function(keyWord) {
   if (keyWord
       .match(/^talks?|grava(ções|coes)?$/)) {
     return talksInternasLink;
+  }
+  // Match ponto eletrônico, ponto eletronico, ponto, horas & horas extras.
+  if (keyWord.match(/^ponto.?(eletr(ô|o)nico)?|horas.?(extras)?$/)) {
+    return pontoLink;
   }
 };
 
