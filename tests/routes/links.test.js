@@ -40,6 +40,7 @@ describe('Api Route', function() {
           'Valores - http://dummy.link\n' +
           'Departamento Pessoal - http://dummy.link\n' +
           'Salário & Benefícios - http://dummy.link\n' +
+          'Ponto Eletrônico & Horas Extras - http://dummy.link\n' +
           'Eventos & Treinamentos - http://dummy.link\n' +
           'Materiais Padrão - http://dummy.link\n' +
           'Malote - http://dummy.link\n' +
@@ -56,6 +57,7 @@ describe('Api Route', function() {
           'Valores - http://dummy.link\n' +
           'Departamento Pessoal - http://dummy.link\n' +
           'Salário & Benefícios - http://dummy.link\n' +
+          'Ponto Eletrônico & Horas Extras - http://dummy.link\n' +
           'Eventos & Treinamentos - http://dummy.link\n' +
           'Materiais Padrão - http://dummy.link\n' +
           'Malote - http://dummy.link\n' +
@@ -155,6 +157,17 @@ describe('Api Route', function() {
       callExpectation('talks', res, expectedMessage);
       callExpectation('gravacoes', res, expectedMessage);
       callExpectation('gravações', res, expectedMessage);
+    });
+    it('Should respond Ponto Eletrônico & Horas Extras Link with texts ' +
+    'ponto eletrônico, ponto eletronico, ponto, horas or horas extras'
+    , function() {
+      const expectedMessage = baseMessage + 'Ponto Eletrônico & Horas Extras - http://dummy.link';
+
+      callExpectation('ponto', res, expectedMessage);
+      callExpectation('ponto eletronco', res, expectedMessage);
+      callExpectation('ponto eletrônico', res, expectedMessage);
+      callExpectation('horas', res, expectedMessage);
+      callExpectation('horas extras', res, expectedMessage);
     });
   });
 });

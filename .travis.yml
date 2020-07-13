@@ -21,6 +21,7 @@ env:
     - URL_EXPENSES: http://dummy.link
     - URL_MYTE: http://dummy.link
     - URL_TALKS: http://dummy.link
+    - URL_PONTO: http://dummy.link
     - CONTACT_CONTAS: http://dummy.link
     - CONTACT_CIO: http://dummy.link
     - CONTACT_DP: http://dummy.link
