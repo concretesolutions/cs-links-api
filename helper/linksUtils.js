@@ -1,3 +1,5 @@
+const SuperExpressive = require('super-expressive');
+
 const guiaLink = `Guia de Sobrevivência - ${process.env.URL_GUIA}`;
 const valoresLink = `Valores - ${process.env.URL_VALORES}`;
 const salariosLink = `Salário & Benefícios - ${process.env.URL_SALARIO}`;
@@ -30,16 +32,43 @@ const linkSelector = function(keyWord) {
           tutorialMyTeLink + '\n' +
           talksInternasLink;
   }
-  // Match guia.
-  if (keyWord.match(/^guia$/)) {
+  const guiaRegex = SuperExpressive()
+      .caseInsensitive
+      .startOfInput
+      .string('guia')
+      .endOfInput
+      .toRegex();
+
+  const valoresRegex = SuperExpressive()
+      .caseInsensitive
+      .startOfInput
+      .string('valores')
+      .endOfInput
+      .toRegex();
+
+  const dpRegex = SuperExpressive()
+      .caseInsensitive
+      .startOfInput
+      .anyOf
+        .group
+          .optional.string('departamento ')
+          .string('pessoal')
+        .end()
+        .string('pessoas')
+        .string('dp')
+      .end()
+      .endOfInput
+      .toRegex();
+
+  if (keyWord.match(guiaRegex)) {
     return guiaLink;
   }
-  // Match valores.
-  if (keyWord.match(/^valores$/)) {
+
+  if (keyWord.match(valoresRegex)) {
     return valoresLink;
   }
-  // Match departamento pessoal, pessoal and dp.
-  if (keyWord.match(/^(departamento )?pessoal|dp$/)) {
+
+  if (keyWord.match(dpRegex)) {
     return dpLink;
   }
   // Match malote and malotes.
