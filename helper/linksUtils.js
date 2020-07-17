@@ -7,7 +7,8 @@ const eventosLink = `Eventos & Treinamentos - ${process.env.URL_EVENTOS}`;
 const materiaisLink = `Materiais Padrão - ${process.env.URL_MATERIAL}`;
 const viagensLink = `Viagens - ${process.env.URL_VIAGENS}`;
 const maloteLink = `Malote - ${process.env.URL_MALOTE}`;
-const reembolsoLink = `Reembolsos & Adiantamentos - ${process.env.URL_REEMBOLSO}`;
+const reembolsoLink = `Reembolsos & Adiantamentos - ${process.env
+    .URL_REEMBOLSO}`;
 const pontoLink = `Ponto Eletrônico & Horas Extras - ${process.env.URL_PONTO}`;
 const dpLink = `Departamento Pessoal - ${process.env.URL_DP}`;
 const tutorialExpensesLink = `Tutorial Expenses - ${process.env.URL_EXPENSES}`;
