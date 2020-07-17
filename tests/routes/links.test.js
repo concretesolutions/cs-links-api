@@ -122,10 +122,12 @@ describe('Api Route', function() {
       const expectedMessage = baseMessage + 'Materiais Padrão - http://dummy.link';
 
       callExpectation('padrão', res, expectedMessage);
+      callExpectation('padrões', res, expectedMessage);
       callExpectation('padrao', res, expectedMessage);
       callExpectation('material', res, expectedMessage);
       callExpectation('materiais', res, expectedMessage);
       callExpectation('apresentação', res, expectedMessage);
+      callExpectation('apresentações', res, expectedMessage);
       callExpectation('apresentacao', res, expectedMessage);
     });
     it('Should respond Eventos & Treinamentos Link with texts eventos, '+

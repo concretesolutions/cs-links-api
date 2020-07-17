@@ -1,4 +1,4 @@
-const SuperExpressive = require('super-expressive');
+const superExpressive = require('super-expressive');
 
 const guiaLink = `Guia de Sobrevivência - ${process.env.URL_GUIA}`;
 const valoresLink = `Valores - ${process.env.URL_VALORES}`;
@@ -32,30 +32,111 @@ const linkSelector = function(keyWord) {
           tutorialMyTeLink + '\n' +
           talksInternasLink;
   }
-  const guiaRegex = SuperExpressive()
+  const guiaRegex = superExpressive()
       .caseInsensitive
       .startOfInput
       .string('guia')
       .endOfInput
       .toRegex();
 
-  const valoresRegex = SuperExpressive()
+  const valoresRegex = superExpressive()
       .caseInsensitive
       .startOfInput
       .string('valores')
       .endOfInput
       .toRegex();
 
-  const dpRegex = SuperExpressive()
+  const dpRegex = superExpressive()
       .caseInsensitive
       .startOfInput
       .anyOf
-        .group
-          .optional.string('departamento ')
-          .string('pessoal')
-        .end()
-        .string('pessoas')
-        .string('dp')
+      .group
+      .optional.string('departamento ')
+      .string('pessoal')
+      .end()
+      .string('pessoas')
+      .string('dp')
+      .end()
+      .endOfInput
+      .toRegex();
+
+  const maloteRegex = superExpressive()
+      .caseInsensitive
+      .startOfInput
+      .string('malote')
+      .optional.string('s')
+      .endOfInput
+      .toRegex();
+
+  const viagemRegex = superExpressive()
+      .caseInsensitive
+      .startOfInput
+      .string('viage')
+      .anyOf
+      .string('m')
+      .string('ns')
+      .end()
+      .endOfInput
+      .toRegex();
+
+  const reembolsoRegex = superExpressive()
+      .caseInsensitive
+      .startOfInput
+      .anyOf
+      .group
+      .string('reembolso')
+      .optional.string('s')
+      .end()
+      .group
+      .string('adiantamento')
+      .optional.string('s')
+      .end()
+      .end()
+      .endOfInput
+      .toRegex();
+
+  const padraoRegex = superExpressive()
+      .caseInsensitive
+      .startOfInput
+      .anyOf
+      .string('padrão')
+      .string('padrao')
+      .string('padrões')
+      .string('material')
+      .string('materiais')
+      .string('apresentacao')
+      .string('apresentação')
+      .string('apresentações')
+      .end()
+      .endOfInput
+      .toRegex();
+
+  const salarioRegex = superExpressive()
+      .caseInsensitive
+      .startOfInput
+      .anyOf
+      .string('benefício')
+      .string('beneficio')
+      .string('benefícios')
+      .string('beneficios')
+      .string('materiais')
+      .string('salário')
+      .string('salários')
+      .string('salario')
+      .string('salarios')
+      .end()
+      .endOfInput
+      .toRegex();
+
+  // Match evento, eventos, treinamento, treinamentos.
+  const eventosRegex = superExpressive()
+      .caseInsensitive
+      .startOfInput
+      .anyOf
+      .string('evento')
+      .string('eventos')
+      .string('treinamento')
+      .string('treinamentos')
       .end()
       .endOfInput
       .toRegex();
@@ -71,32 +152,31 @@ const linkSelector = function(keyWord) {
   if (keyWord.match(dpRegex)) {
     return dpLink;
   }
-  // Match malote and malotes.
-  if (keyWord.match(/^malotes?$/)) {
+
+  if (keyWord.match(maloteRegex)) {
     return maloteLink;
   }
-  // Match viagem and viagens.
-  if (keyWord.match(/^viage(m|ns)$/)) {
+
+  if (keyWord.match(viagemRegex)) {
     return viagensLink;
   }
-  // Match reembolso, reembolsos, adiantamento and adiantamentos.
-  if (keyWord.match(/^reembolsos?|adiantamentos?$/)) {
+
+  if (keyWord.match(reembolsoRegex)) {
     return reembolsoLink;
   }
-  // Match padrão, padrao, material, materiais apresentação and apresentacao
+
   if (keyWord
-      .match(/^padr(ão|ao)|materia(l|is)|apresenta(ção|cao)$/)) {
+      .match(padraoRegex)) {
     return materiaisLink;
   }
-  // Match benefício, benefícios, baneficio, beneficios, salário, salários,
-  // salario and salarios.
+
   if (keyWord
-      .match(/^benef(í|i)cios?|sal(á|a)rios?$/)) {
+      .match(salarioRegex)) {
     return salariosLink;
   }
-  // Match evento, eventos, treinamento, treinamentos.
+
   if (keyWord
-      .match(/^eventos?|treinamentos?$/)) {
+      .match(eventosRegex)) {
     return eventosLink;
   }
   // Match tutorial, tutoriais, expenses.
