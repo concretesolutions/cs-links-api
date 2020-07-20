@@ -166,7 +166,7 @@ describe('Api Route', function() {
       const expectedMessage = baseMessage + 'Ponto Eletrônico & Horas Extras - http://dummy.link';
 
       callExpectation('ponto', res, expectedMessage);
-      callExpectation('ponto eletronco', res, expectedMessage);
+      callExpectation('ponto eletronico', res, expectedMessage);
       callExpectation('ponto eletrônico', res, expectedMessage);
       callExpectation('horas', res, expectedMessage);
       callExpectation('horas extras', res, expectedMessage);

@@ -129,7 +129,6 @@ const linkSelector = function(keyWord) {
       .endOfInput
       .toRegex();
 
-  // Match evento, eventos, treinamento, treinamentos.
   const eventosRegex = superExpressive()
       .caseInsensitive
       .startOfInput
@@ -138,6 +137,58 @@ const linkSelector = function(keyWord) {
       .string('eventos')
       .string('treinamento')
       .string('treinamentos')
+      .end()
+      .endOfInput
+      .toRegex();
+
+    const expensesRegex = superExpressive()
+      .caseInsensitive
+      .startOfInput
+      .anyOf
+      .string('expenses')
+      .string('expense')
+      .string('despesas')
+      .string('despesa')
+      .end()
+      .endOfInput
+      .toRegex();
+
+  const myteRegex = superExpressive()
+      .caseInsensitive
+      .startOfInput
+      .anyOf
+      .string('myte')
+      .string('timesheet')
+      .end()
+      .endOfInput
+      .toRegex();
+
+  const talksRegex = superExpressive()
+      .caseInsensitive
+      .startOfInput
+      .anyOf
+      .string('talks')
+      .string('gravações')
+      .string('gravação')
+      .string('gravacoes')
+      .string('gravacao')
+      .end()
+      .endOfInput
+      .toRegex();
+
+  const pontoRegex = superExpressive()
+      .caseInsensitive
+      .startOfInput
+      .anyOf
+      .capture
+      .string('ponto')
+      .optional.anyOf
+      .string(' eletronico')
+      .string(' eletrônico')
+      .end()
+      .end()
+      .string('horas')
+      .string('horas extras')
       .end()
       .endOfInput
       .toRegex();
@@ -180,23 +231,23 @@ const linkSelector = function(keyWord) {
       .match(eventosRegex)) {
     return eventosLink;
   }
-  // Match tutorial, tutoriais, expenses.
+
   if (keyWord
-      .match(/^expenses?$/)) {
+      .match(expensesRegex)) {
     return tutorialExpensesLink;
   }
-  // Match tutorial, tutoriais, myte.
+
   if (keyWord
-      .match(/^myte?$/)) {
+      .match(myteRegex)) {
     return tutorialMyTeLink;
   }
   // Match Talks Internas.
   if (keyWord
-      .match(/^talks?|grava(ções|coes)?$/)) {
+      .match(talksRegex)) {
     return talksInternasLink;
   }
   // Match ponto eletrônico, ponto eletronico, ponto, horas & horas extras.
-  if (keyWord.match(/^ponto.?(eletr(ô|o)nico)?|horas.?(extras)?$/)) {
+  if (keyWord.match(pontoRegex)) {
     return pontoLink;
   }
 };
