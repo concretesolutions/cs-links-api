@@ -12,7 +12,7 @@
     "codecov": "^3.7.1",
     "eslint": "^7.4.0",
     "eslint-config-google": "^0.14.0",
-    "mocha": "^8.0.1",
+    "mocha": "^8.1.0",
     "nyc": "^15.1.0",
     "super-expressive": "^1.1.0"
   },
