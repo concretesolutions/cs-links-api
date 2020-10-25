@@ -18,12 +18,23 @@ class MatchContact {
     }
   }
 
-  module.exports = function contactSelector(keyword, list, env) {
-    const matchCont = new MatchContact(keyword, list, env);
 
-    if (!keyword || keyword.match(/^todos$/)) {
+/**
+ * @author Camilo Micheletto (cs-camilo-micheletto)
+ * Essa função valida o input do usuário e retorna a ação desejada
+ * @param {String} keyword Input do usuário
+ * @param {Object} list Objeto de contatos/links contendo a ação e o seu regex de validação
+ * @param {String} env Se não mapeada, o ambiente que a keyword se refere (links, contatos, etc...)
+ * 
+ * @return {Function} Função de resposta se a keyword for mapeada ou não
+ */
+
+module.exports = function contactSelector(keyword, list, env) {
+  const matchCont = new MatchContact(keyword, list, env);
+
+  if (!keyword || keyword.match(/^todos$/)) {
     return matchCont.unmappedKeyword();  
-    } else {
-    return matchCont.mappedKeyword();
-    }
+  } else {
+   return matchCont.mappedKeyword();
   }
+}
