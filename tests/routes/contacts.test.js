@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({path: 'mocha.env'});
 
 const expect = require('chai').expect;
 
