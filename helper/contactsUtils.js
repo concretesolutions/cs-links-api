@@ -1,4 +1,4 @@
-const contactSelector = require("./matchContact");
+const itemSelector = require("./matchItem");
 
 const list = {
   contas: {
@@ -32,7 +32,7 @@ const env = "contatos";
 module.exports = {
   messageBuilder: function(keyWord) {
     const greeting = 'Olá, seguem os contatos:\n';
-    const contactFounds = contactSelector(keyWord, list, env);
+    const contactFounds = itemSelector(keyWord, list, env);
     return greeting + contactFounds;
   },
 };

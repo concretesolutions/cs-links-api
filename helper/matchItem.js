@@ -1,4 +1,4 @@
-class MatchContact {
+class MatchItem {
     constructor(keyword, list, env) {
       this.keyword = keyword;
       this.list = list;
@@ -9,7 +9,7 @@ class MatchContact {
         .map(contact => contact[1].action)
         .join("\n")
         .replace(/,/g,':');
-      return `Essa key word não está mapeada,\nmas seguem todos os ${this.env} que tempos mapeados no momento\n${contacts}`;
+      return `Essa key word não está mapeada, mas seguem todos os ${this.env} que temos mapeados no momento\n${contacts}`;
     }
     mappedKeyword() {
       const match = Object.entries(this.list)
@@ -29,12 +29,12 @@ class MatchContact {
  * @return {Function} Função de resposta se a keyword for mapeada ou não
  */
 
-module.exports = function contactSelector(keyword, list, env) {
-  const matchCont = new MatchContact(keyword, list, env);
+module.exports = function itemSelector(keyword, list, env) {
+  const matchItem = new MatchItem(keyword, list, env);
 
   if (!keyword || keyword.match(/^todos$/)) {
-    return matchCont.unmappedKeyword();  
+    return matchItem.unmappedKeyword();  
   } else {
-   return matchCont.mappedKeyword();
+   return matchItem.mappedKeyword();
   }
 }

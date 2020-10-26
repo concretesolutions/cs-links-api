@@ -1,5 +1,5 @@
 const superExpressive = require('super-expressive');
-const contactSelector = require("./matchContact");
+const itemSelector = require("./matchItem");
 
 const list = {
   guiaLink: {
@@ -22,6 +22,23 @@ const list = {
       .endOfInput
       .toRegex(),
   },
+  dpLink: {
+    action: `Departamento Pessoal - ${process.env.URL_DP}`,
+    regex:
+    superExpressive()
+      .caseInsensitive
+      .startOfInput
+      .anyOf
+      .group
+      .optional.string('departamento ')
+      .string('pessoal')
+      .end()
+      .string('pessoas')
+      .string('dp')
+      .end()
+      .endOfInput
+      .toRegex(),
+  },
   salariosLink: {
     action: `Salário & Benefícios - ${process.env.URL_SALARIO}`,
     regex:
@@ -33,11 +50,30 @@ const list = {
       .string('beneficio')
       .string('benefícios')
       .string('beneficios')
-      .string('materiais')
       .string('salário')
       .string('salários')
       .string('salario')
       .string('salarios')
+      .end()
+      .endOfInput
+      .toRegex(),
+  },
+  pontoLink: {
+    action: `Ponto Eletrônico & Horas Extras - ${process.env.URL_PONTO}`,
+    regex:
+    superExpressive()
+      .caseInsensitive
+      .startOfInput
+      .anyOf
+      .capture
+      .string('ponto')
+      .optional.anyOf
+      .string(' eletronico')
+      .string(' eletrônico')
+      .end()
+      .end()
+      .string('horas')
+      .string('horas extras')
       .end()
       .endOfInput
       .toRegex(),
@@ -76,20 +112,6 @@ const list = {
       .endOfInput
       .toRegex(),
   },
-  viagensLink: {
-    action: `Viagens - ${process.env.URL_VIAGENS}`,
-    regex:
-    superExpressive()
-      .caseInsensitive
-      .startOfInput
-      .string('viage')
-      .anyOf
-      .string('m')
-      .string('ns')
-      .end()
-      .endOfInput
-      .toRegex(),
-  },
   maloteLink: {
     action: `Malote - ${process.env.URL_MALOTE}`,
     regex:
@@ -121,39 +143,16 @@ const list = {
       .endOfInput
       .toRegex(),
   },
-  pontoLink: {
-    action: `Ponto Eletrônico & Horas Extras - ${process.env.URL_PONTO}`,
+  viagensLink: {
+    action: `Viagens - ${process.env.URL_VIAGENS}`,
     regex:
     superExpressive()
       .caseInsensitive
       .startOfInput
+      .string('viage')
       .anyOf
-      .capture
-      .string('ponto')
-      .optional.anyOf
-      .string(' eletronico')
-      .string(' eletrônico')
-      .end()
-      .end()
-      .string('horas')
-      .string('horas extras')
-      .end()
-      .endOfInput
-      .toRegex(),
-  },
-  dpLink: {
-    action: `Departamento Pessoal - ${process.env.URL_DP}`,
-    regex:
-    superExpressive()
-      .caseInsensitive
-      .startOfInput
-      .anyOf
-      .group
-      .optional.string('departamento ')
-      .string('pessoal')
-      .end()
-      .string('pessoas')
-      .string('dp')
+      .string('m')
+      .string('ns')
       .end()
       .endOfInput
       .toRegex(),
@@ -201,8 +200,7 @@ const list = {
       .end()
       .endOfInput
       .toRegex(),
-  },
-  
+  }
 }
 
 const env = "links";
@@ -210,7 +208,7 @@ const env = "links";
 module.exports = {
   messageBuilder: function(keyWord) {
     const greeting = 'Olá, seguem os links:\n';
-    const linksFound = contactSelector(keyWord, list, env);
+    const linksFound = itemSelector(keyWord, list, env);
     return greeting + linksFound;
   },
 };
