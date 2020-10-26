@@ -29,6 +29,16 @@ Just type the slash command **link** with the desired keyword, as shown below.
 | evento, eventos, treinamento, treinamentos                      | Return Eventos & Treinamentos   link        |
 | evento, eventos, treinamento, treinamentos                      | Return Ponto Eletrônico & Horas Extras link |
 
+## Testing
+
+To run the chai tests for this code use
+```npm run test```
+
+To live serve this code in the browser
+```node --require dotenv/config server.js```
+
+Before serving make sure you have a _dotenv_ file (.env) with the environment variables as dummy links.
+
 ## **Disclaimer**
 
  Since it´s deployed on Heroku free tier your first usage might render an error due to the fact that the instance was in a dormant state.

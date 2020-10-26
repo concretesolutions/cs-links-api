@@ -1,53 +1,31 @@
 const superExpressive = require('super-expressive');
+const itemSelector = require("./matchItem");
 
-const guiaLink = `Guia de Sobrevivência - ${process.env.URL_GUIA}`;
-const valoresLink = `Valores - ${process.env.URL_VALORES}`;
-const salariosLink = `Salário & Benefícios - ${process.env.URL_SALARIO}`;
-const eventosLink = `Eventos & Treinamentos - ${process.env.URL_EVENTOS}`;
-const materiaisLink = `Materiais Padrão - ${process.env.URL_MATERIAL}`;
-const viagensLink = `Viagens - ${process.env.URL_VIAGENS}`;
-const maloteLink = `Malote - ${process.env.URL_MALOTE}`;
-const reembolsoLink = `Reembolsos & Adiantamentos - ${process.env
-    .URL_REEMBOLSO}`;
-const pontoLink = `Ponto Eletrônico & Horas Extras - ${process.env.URL_PONTO}`;
-const dpLink = `Departamento Pessoal - ${process.env.URL_DP}`;
-const tutorialExpensesLink = `Tutorial Expenses - ${process.env.URL_EXPENSES}`;
-const tutorialMyTeLink = `Tutorial MyTe - ${process.env.URL_MYTE}`;
-const talksInternasLink = `Talks Internas - ${process.env.URL_TALKS}`;
-
-const linkSelector = function(keyWord) {
-  if (!keyWord || keyWord.match(/^todos$/)) {
-    return 'Essa key word não está mapeada, '+
-          'mas seguem todos os links que temos mapeados no momento\n' +
-          guiaLink + '\n' +
-          valoresLink + '\n' +
-          dpLink + '\n' +
-          salariosLink + '\n' +
-          pontoLink + '\n' +
-          eventosLink + '\n' +
-          materiaisLink + '\n' +
-          maloteLink + '\n' +
-          reembolsoLink + '\n' +
-          viagensLink + '\n' +
-          tutorialExpensesLink + '\n' +
-          tutorialMyTeLink + '\n' +
-          talksInternasLink;
-  }
-  const guiaRegex = superExpressive()
-      .caseInsensitive
-      .startOfInput
-      .string('guia')
-      .endOfInput
-      .toRegex();
-
-  const valoresRegex = superExpressive()
+const list = {
+  guiaLink: {
+    action: `Guia de Sobrevivência - ${process.env.URL_GUIA}`,
+    regex: 
+    superExpressive()
+    .caseInsensitive
+    .startOfInput
+    .string('guia')
+    .endOfInput
+    .toRegex(),
+  },
+  valoresLink: {
+    action: `Valores - ${process.env.URL_VALORES}`,
+    regex:
+    superExpressive()
       .caseInsensitive
       .startOfInput
       .string('valores')
       .endOfInput
-      .toRegex();
-
-  const dpRegex = superExpressive()
+      .toRegex(),
+  },
+  dpLink: {
+    action: `Departamento Pessoal - ${process.env.URL_DP}`,
+    regex:
+    superExpressive()
       .caseInsensitive
       .startOfInput
       .anyOf
@@ -59,60 +37,12 @@ const linkSelector = function(keyWord) {
       .string('dp')
       .end()
       .endOfInput
-      .toRegex();
-
-  const maloteRegex = superExpressive()
-      .caseInsensitive
-      .startOfInput
-      .string('malote')
-      .optional.string('s')
-      .endOfInput
-      .toRegex();
-
-  const viagemRegex = superExpressive()
-      .caseInsensitive
-      .startOfInput
-      .string('viage')
-      .anyOf
-      .string('m')
-      .string('ns')
-      .end()
-      .endOfInput
-      .toRegex();
-
-  const reembolsoRegex = superExpressive()
-      .caseInsensitive
-      .startOfInput
-      .anyOf
-      .group
-      .string('reembolso')
-      .optional.string('s')
-      .end()
-      .group
-      .string('adiantamento')
-      .optional.string('s')
-      .end()
-      .end()
-      .endOfInput
-      .toRegex();
-
-  const padraoRegex = superExpressive()
-      .caseInsensitive
-      .startOfInput
-      .anyOf
-      .string('padrão')
-      .string('padrao')
-      .string('padrões')
-      .string('material')
-      .string('materiais')
-      .string('apresentacao')
-      .string('apresentação')
-      .string('apresentações')
-      .end()
-      .endOfInput
-      .toRegex();
-
-  const salarioRegex = superExpressive()
+      .toRegex(),
+  },
+  salariosLink: {
+    action: `Salário & Benefícios - ${process.env.URL_SALARIO}`,
+    regex:
+    superExpressive()
       .caseInsensitive
       .startOfInput
       .anyOf
@@ -120,63 +50,18 @@ const linkSelector = function(keyWord) {
       .string('beneficio')
       .string('benefícios')
       .string('beneficios')
-      .string('materiais')
       .string('salário')
       .string('salários')
       .string('salario')
       .string('salarios')
       .end()
       .endOfInput
-      .toRegex();
-
-  const eventosRegex = superExpressive()
-      .caseInsensitive
-      .startOfInput
-      .anyOf
-      .string('evento')
-      .string('eventos')
-      .string('treinamento')
-      .string('treinamentos')
-      .end()
-      .endOfInput
-      .toRegex();
-
-    const expensesRegex = superExpressive()
-      .caseInsensitive
-      .startOfInput
-      .anyOf
-      .string('expenses')
-      .string('expense')
-      .string('despesas')
-      .string('despesa')
-      .end()
-      .endOfInput
-      .toRegex();
-
-  const myteRegex = superExpressive()
-      .caseInsensitive
-      .startOfInput
-      .anyOf
-      .string('myte')
-      .string('timesheet')
-      .end()
-      .endOfInput
-      .toRegex();
-
-  const talksRegex = superExpressive()
-      .caseInsensitive
-      .startOfInput
-      .anyOf
-      .string('talks')
-      .string('gravações')
-      .string('gravação')
-      .string('gravacoes')
-      .string('gravacao')
-      .end()
-      .endOfInput
-      .toRegex();
-
-  const pontoRegex = superExpressive()
+      .toRegex(),
+  },
+  pontoLink: {
+    action: `Ponto Eletrônico & Horas Extras - ${process.env.URL_PONTO}`,
+    regex:
+    superExpressive()
       .caseInsensitive
       .startOfInput
       .anyOf
@@ -191,71 +76,139 @@ const linkSelector = function(keyWord) {
       .string('horas extras')
       .end()
       .endOfInput
-      .toRegex();
+      .toRegex(),
+  },
+  eventosLink: {
+    action: `Eventos & Treinamentos - ${process.env.URL_EVENTOS}`,
+    regex:
+    superExpressive()
+      .caseInsensitive
+      .startOfInput
+      .anyOf
+      .string('evento')
+      .string('eventos')
+      .string('treinamento')
+      .string('treinamentos')
+      .end()
+      .endOfInput
+      .toRegex(),
+  },
+  materiaisLink: {
+    action: `Materiais Padrão - ${process.env.URL_MATERIAL}`,
+    regex:
+    superExpressive()
+      .caseInsensitive
+      .startOfInput
+      .anyOf
+      .string('padrão')
+      .string('padrao')
+      .string('padrões')
+      .string('material')
+      .string('materiais')
+      .string('apresentacao')
+      .string('apresentação')
+      .string('apresentações')
+      .end()
+      .endOfInput
+      .toRegex(),
+  },
+  maloteLink: {
+    action: `Malote - ${process.env.URL_MALOTE}`,
+    regex:
+    superExpressive()
+      .caseInsensitive
+      .startOfInput
+      .string('malote')
+      .optional.string('s')
+      .endOfInput
+      .toRegex(),
+  },
+  reembolsoLink: {
+    action: `Reembolsos & Adiantamentos - ${process.env
+      .URL_REEMBOLSO}`,
+    regex:
+    superExpressive()
+      .caseInsensitive
+      .startOfInput
+      .anyOf
+      .group
+      .string('reembolso')
+      .optional.string('s')
+      .end()
+      .group
+      .string('adiantamento')
+      .optional.string('s')
+      .end()
+      .end()
+      .endOfInput
+      .toRegex(),
+  },
+  viagensLink: {
+    action: `Viagens - ${process.env.URL_VIAGENS}`,
+    regex:
+    superExpressive()
+      .caseInsensitive
+      .startOfInput
+      .string('viage')
+      .anyOf
+      .string('m')
+      .string('ns')
+      .end()
+      .endOfInput
+      .toRegex(),
+  },
+  tutorialExpensesLink: {
+    action: `Tutorial Expenses - ${process.env.URL_EXPENSES}`,
+    regex:
+    superExpressive()
+      .caseInsensitive
+      .startOfInput
+      .anyOf
+      .string('expenses')
+      .string('expense')
+      .string('despesas')
+      .string('despesa')
+      .end()
+      .endOfInput
+      .toRegex(),
+  },
+  tutorialMyTeLink: {
+    action: `Tutorial MyTe - ${process.env.URL_MYTE}`,
+    regex:
+    superExpressive()
+      .caseInsensitive
+      .startOfInput
+      .anyOf
+      .string('myte')
+      .string('timesheet')
+      .end()
+      .endOfInput
+      .toRegex(),
+  },
+  talksInternasLink: {
+    action: `Talks Internas - ${process.env.URL_TALKS}`,
+    regex:
+    superExpressive()
+      .caseInsensitive
+      .startOfInput
+      .anyOf
+      .string('talks')
+      .string('gravações')
+      .string('gravação')
+      .string('gravacoes')
+      .string('gravacao')
+      .end()
+      .endOfInput
+      .toRegex(),
+  }
+}
 
-  if (keyWord.match(guiaRegex)) {
-    return guiaLink;
-  }
-
-  if (keyWord.match(valoresRegex)) {
-    return valoresLink;
-  }
-
-  if (keyWord.match(dpRegex)) {
-    return dpLink;
-  }
-
-  if (keyWord.match(maloteRegex)) {
-    return maloteLink;
-  }
-
-  if (keyWord.match(viagemRegex)) {
-    return viagensLink;
-  }
-
-  if (keyWord.match(reembolsoRegex)) {
-    return reembolsoLink;
-  }
-
-  if (keyWord
-      .match(padraoRegex)) {
-    return materiaisLink;
-  }
-
-  if (keyWord
-      .match(salarioRegex)) {
-    return salariosLink;
-  }
-
-  if (keyWord
-      .match(eventosRegex)) {
-    return eventosLink;
-  }
-
-  if (keyWord
-      .match(expensesRegex)) {
-    return tutorialExpensesLink;
-  }
-
-  if (keyWord
-      .match(myteRegex)) {
-    return tutorialMyTeLink;
-  }
-  // Match Talks Internas.
-  if (keyWord
-      .match(talksRegex)) {
-    return talksInternasLink;
-  }
-  // Match ponto eletrônico, ponto eletronico, ponto, horas & horas extras.
-  if (keyWord.match(pontoRegex)) {
-    return pontoLink;
-  }
-};
+const env = "links";
 
 module.exports = {
   messageBuilder: function(keyWord) {
     const greeting = 'Olá, seguem os links:\n';
-    const linksFound = linkSelector(keyWord);
+    const linksFound = itemSelector(keyWord, list, env);
     return greeting + linksFound;
   },
 };
