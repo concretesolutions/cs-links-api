@@ -1,20 +1,23 @@
 {
     "env": {
+        "node": true,
         "browser": true,
         "commonjs": true,
-        "es6": true
+        "es2021": true
     },
-    "extends": [
-        "google"
-    ],
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
     },
+    "extends": [
+        "airbnb-base"
+    ],
     "parserOptions": {
-        "ecmaVersion": 2018
+        "ecmaVersion": 12
     },
+    "ignorePatterns": ["/coverage/*.js"],
     "rules": {
-        "code": 120
+        "no-mixed-spaces-and-tabs": 0,
+        "no-tabs": 0
     }
 }

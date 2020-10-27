@@ -1,8 +1,8 @@
-const {messageBuilder} = require('../helper/contactsUtils');
+const { messageBuilder } = require('../helper/contactsUtils');
 
 module.exports = {
-  contacts: function(req, res) {
-    const text = req.query.text;
+  contacts(req, res) {
+    const { text } = req.query;
     const contact = messageBuilder(text);
     res.send(contact);
   },

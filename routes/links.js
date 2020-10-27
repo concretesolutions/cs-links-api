@@ -1,8 +1,8 @@
-const {messageBuilder} = require('../helper/linksUtils');
+const { messageBuilder } = require('../helper/linksUtils');
 
 module.exports = {
-  links: function(req, res) {
-    const text = req.query.text;
+  links(req, res) {
+    const { text } = req.query;
     const msg = messageBuilder(text);
     res.send(msg);
   },
