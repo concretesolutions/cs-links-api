@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "lint": "eslint ./helper/*.js ./server.js",
+    "lint": "eslint ./helper/*.js ./server.js routes/*.js",
     "lint:fix": "npm run lint -- --fix",
     "test": "nyc --reporter=lcov mocha ./tests --recursive",
     "coverage": "codecov"
