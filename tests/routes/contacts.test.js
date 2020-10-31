@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 require('dotenv').config({ path: 'mocha.env' });
 
 const { expect } = require('chai');
@@ -11,7 +12,7 @@ const res = {
   },
 };
 
-const buildRequest = function (keyWord) {
+const buildRequest = (keyWord) => {
   const req = {
     query: {
       text: keyWord,
@@ -26,7 +27,7 @@ const extendedMessage = `${baseMessage
 }Essa key word não está mapeada, `
   + 'mas seguem todos os contatos que temos mapeados no momento\n';
 
-const callExpectation = function (keyWord, actual, expected) {
+const callExpectation = (keyWord, actual, expected) => {
   contacts(buildRequest(keyWord), actual);
   expect(actual.sendCalledWith).to.equal(expected);
 };
