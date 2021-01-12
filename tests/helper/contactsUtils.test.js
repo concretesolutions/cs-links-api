@@ -5,10 +5,6 @@ const { expect } = require('chai');
 const contactsUtils = require('../../helper/contactsUtils');
 
 describe('Contact Utils', () => {
-  it('should return Contas a Pagar contact', () => {
-    expect(contactsUtils.messageBuilder('contas'))
-      .equal(`Olá, seguem os contatos:\nContas a Pagar - ${process.env.CONTACT_CONTAS}`);
-  });
   it('should return cio contact', () => {
     expect(contactsUtils.messageBuilder('cio'))
       .equal(`Olá, seguem os contatos:\nCIO - ${process.env.CONTACT_CIO}`);

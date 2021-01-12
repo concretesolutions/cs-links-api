@@ -1,10 +1,6 @@
 const itemSelector = require('./matchItem');
 
 const list = {
-  contas: {
-    action: `Contas a Pagar - ${process.env.CONTACT_CONTAS}`,
-    regex: /^contas$/,
-  },
   cio: {
     action: `CIO - ${process.env.CONTACT_CIO}`,
     regex: /^CIO|cio$/,
