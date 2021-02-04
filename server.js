@@ -1,3 +1,4 @@
+const serverless = require('serverless-http');
 const express = require('express');
 
 const app = express();
@@ -12,3 +13,5 @@ app.listen(port, () => {
 
 app.get('/links', links);
 app.get('/contatos', contacts);
+
+module.exports.handler = serverless(app);
