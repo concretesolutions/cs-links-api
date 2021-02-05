@@ -4,11 +4,12 @@
   "description": "Slack integrations for slash-command",
   "main": "server.js",
   "dependencies": {
-    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "serverless-http": "^2.7.0",
     "super-expressive": "^1.4.0"
   },
   "devDependencies": {
+    "dotenv": "^8.2.0",
     "chai": "^4.2.0",
     "codecov": "^3.8.1",
     "eslint": "^7.19.0",
