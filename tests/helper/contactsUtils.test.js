@@ -17,12 +17,6 @@ describe('Contact Utils', () => {
     expect(contactsUtils.messageBuilder('dp'))
       .equal(`Olá, seguem os contatos:\nDepartamento Pessoal - ${process.env.CONTACT_DP}`);
   });
-  it('should return myTe contact', () => {
-    expect(contactsUtils.messageBuilder('myte'))
-      .equal(`Olá, seguem os contatos:\nAtendimento Time & Expenses (10 às 16h) - ${process.env.CONTACT_MYTE}`);
-    expect(contactsUtils.messageBuilder('expenses'))
-      .equal(`Olá, seguem os contatos:\nAtendimento Time & Expenses (10 às 16h) - ${process.env.CONTACT_MYTE}`);
-  });
   it('should return ASOC contact', () => {
     expect(contactsUtils.messageBuilder('asoc'))
       .equal(`Olá, seguem os contatos:\nASOC - ${process.env.CONTACT_ASOC}`);
