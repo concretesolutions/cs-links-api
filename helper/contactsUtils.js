@@ -9,10 +9,6 @@ const list = {
     action: `Departamento Pessoal - ${process.env.CONTACT_DP}`,
     regex: /^(departamento )?pessoal|dp$/,
   },
-  myTe: {
-    action: `Atendimento Time & Expenses (10 às 16h) - ${process.env.CONTACT_MYTE}`,
-    regex: /^myte|expenses$/,
-  },
   asoc: {
     action: `ASOC - ${process.env.CONTACT_ASOC}`,
     regex: /^asoc$/,
