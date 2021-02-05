@@ -1,0 +1,25 @@
+name: CS-LINKS-API CI
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Installing dependencies...
+      run: npm install
+    - name: Create ZIP file
+      uses: montudor/action-zip@v0.1.1
+      with:
+        args: zip -qq -r ./cs-slack-api.zip ./
+    - name: default deploy
+      uses: appleboy/lambda-action@master
+      with:
+        aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws_region: us-east-1
+        function_name: cs-links-api-dev-api
+        zip_file: cs-slack-api.zip
