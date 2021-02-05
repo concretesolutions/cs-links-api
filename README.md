@@ -51,4 +51,4 @@ Before serving make sure you have a _dotenv_ file (.env) with the environment va
 
 ## **Disclaimer**
 
- Since it´s deployed on Heroku free tier your first usage might render an error due to the fact that the instance was in a dormant state.
+ In now runs no AWS Lambda Free Tier :) No more dormant state ! 
