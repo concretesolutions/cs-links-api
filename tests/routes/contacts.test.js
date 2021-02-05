@@ -38,13 +38,11 @@ describe('Api Route', () => {
         callExpectation(null, res, `${extendedMessage}`
           + `CIO - ${process.env.CONTACT_CIO}\n`
           + `Departamento Pessoal - ${process.env.CONTACT_DP}\n`
-          + `Atendimento Time & Expenses (10 às 16h) - ${process.env.CONTACT_MYTE}\n`
           + `ASOC - ${process.env.CONTACT_ASOC}\n`
           + `It´s Seg - ${process.env.CONTACT_ITSEG}`);
         callExpectation('todos', res, `${extendedMessage}`
           + `CIO - ${process.env.CONTACT_CIO}\n`
           + `Departamento Pessoal - ${process.env.CONTACT_DP}\n`
-          + `Atendimento Time & Expenses (10 às 16h) - ${process.env.CONTACT_MYTE}\n`
           + `ASOC - ${process.env.CONTACT_ASOC}\n`
           + `It´s Seg - ${process.env.CONTACT_ITSEG}`);
       });
@@ -56,11 +54,6 @@ describe('Api Route', () => {
       + 'departamento pessoal', () => {
       callExpectation('dp', res, `${baseMessage}Departamento Pessoal - ${process.env.CONTACT_DP}`);
       callExpectation('dp', res, `${baseMessage}Departamento Pessoal - ${process.env.CONTACT_DP}`);
-    });
-    it('Should respond Departamento Pessoal contact with text dp, '
-      + 'departamento pessoal', () => {
-      callExpectation('myte', res, `${baseMessage}Atendimento Time & Expenses (10 às 16h) - ${process.env.CONTACT_MYTE}`);
-      callExpectation('expenses', res, `${baseMessage}Atendimento Time & Expenses (10 às 16h) - ${process.env.CONTACT_MYTE}`);
     });
   });
 });
