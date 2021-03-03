@@ -9,9 +9,9 @@
     "super-expressive": "^1.4.0"
   },
   "devDependencies": {
-    "dotenv": "^8.2.0",
     "chai": "^4.3.0",
     "codecov": "^3.8.1",
+    "dotenv": "^8.2.0",
     "eslint": "^7.21.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-google": "^0.14.0",
