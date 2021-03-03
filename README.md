@@ -20,12 +20,12 @@ Just type the slash command **link** or **contatos** with the desired keyword, a
 | malote, malotes                                                 | Return Malote Link                          |
 | guia                                                            | Return Guia de Sobrevivência link           |
 | viagem, viagens                                                 | Return Viagens link                         |
-| benefício, beneficio, benefícios, beneficios, salário, salario  | Return Salário & Benefícios link            |
+| benefício, beneficio, benefícios, beneficios, salário, salario  | Return Atestado Médico      link            |
 | padrão, padrao, material, materiais, apresentação, apresentacao | Return Materiais Padrão link                |
 | reembolso, reembolsos, adiantamento, adiantamentos              | Return Reembolso & Adiantamento link        |
 | departamento pessoal, pessoal, dp                               | Return Departamento Pessoal     link        |
 | evento, eventos, treinamento, treinamentos                      | Return Eventos & Treinamentos   link        |
-| evento, eventos, treinamento, treinamentos                      | Return Ponto Eletrônico & Horas Extras link |
+| ponto, ponto eletrônico, horas, horas extras                    | Return Ponto Eletrônico & Horas Extras link |
 
 `/contatos guia`
 
