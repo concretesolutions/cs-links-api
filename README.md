@@ -5,6 +5,8 @@ Slack integrations for slash-command
 ## Badges
 
 [![CS-LINKS-API CI](https://github.com/concretesolutions/cs-links-api/workflows/CS-LINKS-API%20CI/badge.svg)](https://github.com/concretesolutions/cs-links-api/actions?query=workflow%3A%22CS-LINKS-API+CI%22)
+[![codecov](https://codecov.io/gh/concretesolutions/cs-links-api/branch/master/graph/badge.svg?token=gR2Jju7yVw)](https://codecov.io/gh/concretesolutions/cs-links-api)
+
 ## How to use on Slack
 
 Just type the slash command **link** or **contatos** with the desired keyword, as shown below.
