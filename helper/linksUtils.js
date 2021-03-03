@@ -78,6 +78,28 @@ const list = {
     	.endOfInput
     	.toRegex(),
   },
+  atestadoLink: {
+    action: `Atestado Médico - ${process.env.URL_ATESTADO}`,
+    regex:
+    superExpressive()
+		.caseInsensitive
+		.startOfInput
+		.anyOf
+		.capture
+		.string('atestado')
+		.optional.string('s')
+		.optional.anyOf
+		.string(' médico')
+		.string(' médico')
+		.string(' medico')
+		.string(' medico')
+		.end()
+		.optional.string('s')
+		.end()
+		.end()
+		.endOfInput
+		.toRegex(),
+  },
   eventosLink: {
     action: `Eventos & Treinamentos - ${process.env.URL_EVENTOS}`,
     regex:
@@ -204,7 +226,6 @@ const list = {
 };
 
 const env = 'links';
-
 module.exports = {
   messageBuilder(keyWord) {
     const greeting = 'Olá, seguem os links:\n';
