@@ -42,6 +42,7 @@ describe('Api Route', () => {
           + `Departamento Pessoal - ${process.env.URL_DP}\n`
           + `Salário & Benefícios - ${process.env.URL_SALARIO}\n`
           + `Ponto Eletrônico & Horas Extras - ${process.env.URL_PONTO}\n`
+          + `Atestado Médico - ${process.env.URL_ATESTADO}\n`
           + `Eventos & Treinamentos - ${process.env.URL_EVENTOS}\n`
           + `Materiais Padrão - ${process.env.URL_MATERIAL}\n`
           + `Malote - ${process.env.URL_MALOTE}\n`
@@ -59,6 +60,7 @@ describe('Api Route', () => {
           + `Departamento Pessoal - ${process.env.URL_DP}\n`
           + `Salário & Benefícios - ${process.env.URL_SALARIO}\n`
           + `Ponto Eletrônico & Horas Extras - ${process.env.URL_PONTO}\n`
+          + `Atestado Médico - ${process.env.URL_ATESTADO}\n`
           + `Eventos & Treinamentos - ${process.env.URL_EVENTOS}\n`
           + `Materiais Padrão - ${process.env.URL_MATERIAL}\n`
           + `Malote - ${process.env.URL_MALOTE}\n`
@@ -168,6 +170,20 @@ describe('Api Route', () => {
       callExpectation('ponto eletrônico', res, expectedMessage);
       callExpectation('horas', res, expectedMessage);
       callExpectation('horas extras', res, expectedMessage);
+    });
+    it('Should respond Atestados Médicos Link.', () => {
+      const expectedMessage = `${baseMessage}Atestado Médico - ${process.env.URL_ATESTADO}`;
+
+      callExpectation('atestado', res, expectedMessage);
+      callExpectation('atestados', res, expectedMessage);
+      callExpectation('atestado médico', res, expectedMessage);
+      callExpectation('atestados médico', res, expectedMessage);
+      callExpectation('atestado medico', res, expectedMessage);
+      callExpectation('atestados medico', res, expectedMessage);
+      callExpectation('atestado médicos', res, expectedMessage);
+      callExpectation('atestados médicos', res, expectedMessage);
+      callExpectation('atestado medicos', res, expectedMessage);
+      callExpectation('atestados medicos', res, expectedMessage);
     });
   });
 });
