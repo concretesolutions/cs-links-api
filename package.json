@@ -4,7 +4,7 @@
   "description": "Slack integrations for slash-command",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "serverless-http": "^2.7.0",
     "super-expressive": "^1.4.0"
   },
